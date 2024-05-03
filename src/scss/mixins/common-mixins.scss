@@ -1,0 +1,90 @@
+@mixin max-laptop {
+  @media (max-width: $max-laptop) {
+    @content;
+  }
+}
+
+@mixin max-tablet {
+  @media (max-width: $max-tablet) {
+    @content;
+  }
+}
+
+@mixin max-mobile {
+  @media (max-width: $max-mobile) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin max-small-mobile {
+  @media screen and (max-width: $max-small-mobile) {
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+@mixin reset-btn($color: $black) {
+  position: relative;
+  font: inherit;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  white-space: nowrap;
+  user-select: none;
+  box-sizing: border-box;
+  display: inline-flex;
+  max-width: 100%;
+  color: $color;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+@mixin scrollBars() {
+  &::-webkit-scrollbar {
+    width: use-rem(10px);
+    height: use-rem(10px);
+    border-radius: use-rem(24px);
+    -webkit-border-radius: use-rem(24px);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $white;
+    border-radius: use-rem(24px);
+    -webkit-border-radius: use-rem(24px);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    margin: use-rem(24px) use-rem(5px);
+  }
+}

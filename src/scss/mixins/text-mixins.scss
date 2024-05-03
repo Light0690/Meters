@@ -1,0 +1,646 @@
+// ОСНОВНАЯ ТИПОГРАФИКА
+
+@mixin h1A {
+  @include max-laptop {
+    font-size: use-rem(130px);
+  }
+
+  @include max-tablet {
+    font-size: use-rem(90px);
+  }
+
+  @include max-mobile {
+    font-size: use-rem(64px);
+  }
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: $font-family;
+  font-size: use-rem(170px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+// @mixin h1G($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 130px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 130px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 75px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 75px);
+//     }
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 44px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 44px);
+//     }
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 170px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 100%;
+//   text-transform: uppercase;
+
+//   @if ($isFixLine) {
+//     @include fix-line($isFixScale, 170px);
+//   }
+// }
+
+// @mixin h2A($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 120px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 120px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 75px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 75px);
+//     }
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 44px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 44px);
+//     }
+//   }
+
+//   font-family: $font-family;
+//   font-size: use-rem-switch($isFixScale, 150px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 100%;
+//   text-transform: uppercase;
+
+//   @if ($isFixLine) {
+//     @include fix-line($isFixScale, 150px);
+//   }
+// }
+
+// @mixin h2ASM($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 90px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 90px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 56px);
+//     line-height: 110%;
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 0);
+//     }
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 32px);
+//   }
+
+//   font-family: $font-family;
+//   font-size: use-rem-switch($isFixScale, 120px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 100%;
+//   text-transform: uppercase;
+
+//   @if $isFixLine {
+//     @include fix-line($isFixScale, 120px);
+//   }
+// }
+
+// @mixin h2G($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 120px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 120px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 75px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 75px);
+//     }
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 42px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 42px);
+//     }
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 150px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 100%;
+//   text-transform: uppercase;
+
+//   @if ($isFixLine) {
+//     @include fix-line($isFixScale, 150px);
+//   }
+// }
+
+// @mixin h3UP($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 76px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 76px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 40px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 40px);
+//     }
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 30px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 30px);
+//     }
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 90px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 100%;
+//   text-transform: uppercase;
+
+//   @if ($isFixLine) {
+//     @include fix-line($isFixScale, 90px);
+//   }
+// }
+
+// @mixin h3($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 54px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 54px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 40px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 40px);
+//     }
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 24px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 24px);
+//     }
+//   }
+
+//   font-family: $font-family;
+//   font-size: use-rem-switch($isFixScale, 76px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 120%;
+//   text-transform: uppercase;
+
+//   @if ($isFixLine) {
+//     @include fix-line($isFixScale, 76px);
+//   }
+// }
+
+// @mixin h4UP($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 48px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 48px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 32px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 32px);
+//     }
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 24px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 32px);
+//     }
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 60px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 100%;
+//   text-transform: uppercase;
+
+//   @if ($isFixLine) {
+//     @include fix-line($isFixScale, 60px);
+//   }
+// }
+
+// @mixin h4($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 40px);
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 32px);
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 22px);
+//   }
+
+//   font-family: $font-family;
+//   font-size: use-rem-switch($isFixScale, 48px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 140%;
+//   text-transform: uppercase;
+// }
+
+// @mixin h4-manrope($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 24px);
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 18px);
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 28px);
+//   font-weight: 700;
+//   line-height: 120%;
+//   text-transform: none;
+// }
+
+// @mixin h5($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 28px);
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 18px);
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 16px);
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 32px);
+//   font-style: normal;
+//   font-weight: 600;
+//   line-height: 120%;
+// }
+
+// @mixin h5UP($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 26px);
+//     letter-spacing: 0;
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 16px);
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 32px);
+//   font-style: normal;
+//   font-weight: 600;
+//   line-height: 120%;
+//   letter-spacing: use-rem-switch($isFixScale, 0.96px);
+//   text-transform: uppercase;
+// }
+
+// @mixin h6UP($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 16px);
+//     letter-spacing: use-rem-switch($isFixScale, 1px);
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 16px);
+//     letter-spacing: 0;
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 14px);
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 16px);
+//   font-style: normal;
+//   font-weight: 600;
+//   line-height: 130%;
+//   letter-spacing: use-rem-switch($isFixScale, 1.5px);
+//   text-transform: uppercase;
+// }
+
+// @mixin h6($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 18px);
+//     letter-spacing: use-rem-switch($isFixScale, 1px);
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 16px);
+//     letter-spacing: 0;
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 14px);
+//   }
+
+//   font-feature-settings: 'clig' off, 'liga' off;
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 20px);
+//   font-style: normal;
+//   font-weight: 600;
+//   line-height: 160%; /* 32px */
+// }
+
+// @mixin body-medium($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 28px);
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 18px);
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 16px);
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 32px);
+//   font-style: normal;
+//   font-weight: 500;
+//   line-height: 160%;
+// }
+
+// @mixin body-quote($isFixScale: false) {
+//   font-family: $font-family--quote;
+//   font-size: use-rem-switch($isFixScale, 32px);
+//   font-style: normal;
+//   font-weight: 500;
+//   line-height: 160%;
+// }
+
+// @mixin body-medium-up($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 32px);
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 24px);
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 18px);
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 32px);
+//   font-style: normal;
+//   font-weight: 500;
+//   line-height: 160%;
+//   text-transform: uppercase;
+// }
+
+// @mixin body-small($isFixScale: false) {
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 16px);
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 14px);
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 24px);
+//   font-style: normal;
+//   font-weight: 500;
+//   line-height: 160%;
+// }
+
+// @mixin button($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 18px);
+//     letter-spacing: use-rem-switch($isFixScale, 1px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 18px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     letter-spacing: use-rem-switch($isFixScale, 0px);
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 14px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 14px);
+//     }
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 24px);
+//   font-style: normal;
+//   font-weight: 600;
+//   line-height: 100%;
+//   letter-spacing: use-rem-switch($isFixScale, 0.72px);
+//   text-transform: uppercase;
+
+//   @if ($isFixLine) {
+//     @include fix-line($isFixScale, 24px);
+//   }
+// }
+
+// @mixin slider($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 26px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 26px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 20px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 20px);
+//     }
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 16px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 16px);
+//     }
+//   }
+
+//   font-family: $font-family;
+//   font-feature-settings: 'clig' off, 'liga' off;
+//   font-size: use-rem-switch($isFixScale, 28px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 100%;
+//   text-transform: uppercase;
+
+//   @if ($isFixLine) {
+//     @include fix-line($isFixScale, 28px);
+//   }
+// }
+
+// @mixin caption($isFixScale: false) {
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 14px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 130%;
+// }
+
+// @mixin medal-count($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 24px);
+//     font-weight: 500;
+//     line-height: 150%;
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 12px);
+//     font-weight: 400;
+//     line-height: 110%;
+//   }
+
+//   font-family: $font-family--second;
+//   font-size: use-rem-switch($isFixScale, 18.667px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 130%;
+// }
+
+// @mixin quote-text($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 26px);
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 22px);
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 16px);
+//   }
+
+//   font-family: $font-family--italic;
+//   font-feature-settings: 'clig' off, 'liga' off;
+//   font-size: use-rem-switch($isFixScale, 32px);
+//   font-style: italic;
+//   font-weight: 400;
+//   line-height: 120.5%;
+// }
+
+// @mixin quote-text-second($isFixScale: false) {
+//   @include max-laptop {
+//     font-size: use-rem-switch($isFixScale, 33px);
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem-switch($isFixScale, 27px);
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem-switch($isFixScale, 22px);
+//   }
+
+//   font-family: $font-family--italic;
+//   font-size: use-rem-switch($isFixScale, 39px);
+//   font-style: italic;
+//   line-height: 120.5%;
+// }
+
+// @mixin titles-number($isFixScale: false, $isFixLine: false) {
+//   @include max-laptop {
+//     font-size: use-rem(90px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 90px);
+//     }
+//   }
+
+//   @include max-tablet {
+//     font-size: use-rem(56px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 56px);
+//     }
+//   }
+
+//   @include max-mobile {
+//     font-size: use-rem(32px);
+
+//     @if ($isFixLine) {
+//       @include fix-line($isFixScale, 32px);
+//     }
+//   }
+
+//   font-family: $font-family;
+//   font-size: use-rem(120px);
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 100%;
+//   text-transform: uppercase;
+
+//   @if ($isFixLine) {
+//     @include fix-line($isFixScale, 120px);
+//   }
+// }
+// КОНЕЦ ОСНОВНОЙ ТИПОГРАФИКИ

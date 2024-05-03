@@ -1,0 +1,61 @@
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:meta';
+
+$px-only: false;
+// Единица измерения, к которой приводим
+$toValue: 1rem;
+
+// Основа взята с https://github.com/pierreburel/sass-rem
+@function _convert($to, $values...) {
+  $result: ();
+  $separator: list.separator($values);
+
+  @each $value in $values {
+    @if meta.type-of($value) == 'number' and math.unit($value) == 'rem' and $to == 'px' {
+      $result: list.append($result, $value, $separator);
+    } @else if meta.type-of($value) == 'number' and math.unit($value) == 'px' and $to == 'rem' {
+      $result: list.append($result, (math.div($value, 1px) * $toValue), $separator);
+    } @else if meta.type-of($value) == 'list' {
+      $result: list.append($result, _convert($to, $value...), $separator);
+    } @else {
+      $result: list.append($result, $value, $separator);
+    }
+  }
+
+  @return if(list.length($result) == 1, list.nth($result, 1), $result);
+}
+
+// Переводит px в rem.
+// Пример: use-rem(20px) === 20rem.
+@function use-rem($values...) {
+  @if $px-only {
+    @return _convert(px, $values...);
+  } @else {
+    @return _convert(rem, $values...);
+  }
+}
+
+
+/*
+  With fix coefficient
+*/
+@function _convert-with-coefficient($to, $values...) {
+  $result: ();
+  $separator: list.separator($values);
+
+  @each $value in $values {
+    @if meta.type-of($value) == 'number' and math.unit($value) == 'rem' and $to == 'px' {
+      $result: list.append($result, #{"calc(#{$value} * var(--fix-scale))"}, $separator);
+    } @else if meta.type-of($value) == 'number' and math.unit($value) == 'px' and $to == 'rem' {
+      $temp: (math.div($value, 1px) * $toValue);
+      $result: list.append($result, #{"calc(#{$temp} * var(--fix-scale))"}, $separator);
+    } @else if meta.type-of($value) == 'list' {
+      $result: list.append($result, _convert-with-coefficient($to, $value...), $separator);
+    } @else {
+      $result: list.append($result, $value, $separator);
+    }
+  }
+
+  @return if(list.length($result) == 1, list.nth($result, 1), $result);
+}

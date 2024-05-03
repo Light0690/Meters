@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'Lighthaus';
+  src: url('#{$pathToFonts}/lighthaus/Lighthaus.woff2') format('woff2'),
+    url('#{$pathToFonts}/lighthaus/Lighthaus.woff') format('woff'),
+    url('#{$pathToFonts}/lighthaus/Lighthaus.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('#{$pathToFonts}/manrope/Manrope-ExtraLight.woff2') format('woff2'),
+    url('#{$pathToFonts}/manrope/Manrope-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('#{$pathToFonts}/manrope/Manrope-Light.woff2') format('woff2'),
+    url('#{$pathToFonts}/manrope/Manrope-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('#{$pathToFonts}/manrope/Manrope-Regular.woff2') format('woff2'),
+    url('#{$pathToFonts}/manrope/Manrope-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('#{$pathToFonts}/manrope/Manrope-Medium.woff2') format('woff2'),
+    url('#{$pathToFonts}/manrope/Manrope-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('#{$pathToFonts}/manrope/Manrope-SemiBold.woff2') format('woff2'),
+    url('#{$pathToFonts}/manrope/Manrope-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('#{$pathToFonts}/manrope/Manrope-Bold.woff2') format('woff2'),
+    url('#{$pathToFonts}/manrope/Manrope-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('#{$pathToFonts}/manrope/Manrope-ExtraBold.woff2') format('woff2'),
+    url('#{$pathToFonts}/manrope/Manrope-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+  Source Serif Pro
+*/
+@font-face {
+  font-family: 'Source Serif Pro';
+  src: url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-ExtraLightIt.woff2') format('woff2'),
+    url('#{$pathToFonts}/source-serif-pro/ SourceSerifPro-ExtraLightIt.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Serif Pro';
+  src: url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-LightIt.woff2') format('woff2'),
+    url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-LightIt.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Serif Pro';
+  src: url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-Regular.woff2') format('woff2'),
+    url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Serif Pro';
+  src: url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-It.woff2') format('woff2'),
+    url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-It.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Serif Pro';
+  src: url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-SemiboldIt.woff2') format('woff2'),
+    url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-SemiboldIt.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Serif Pro';
+  src: url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-BoldIt.woff2') format('woff2'),
+    url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-BoldIt.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Serif Pro';
+  src: url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-BlackIt.woff2') format('woff2'),
+    url('#{$pathToFonts}/source-serif-pro/SourceSerifPro-BlackIt.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

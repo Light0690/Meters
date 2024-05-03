@@ -1,0 +1,131 @@
+/* SCALES */
+$desktop-scale: 19.2; // 1920px
+$laptop-scale: 14.4; // 1440px
+$tablet-scale: 7.68; // 768px
+$mobile-scale: 3.75; // 375px
+
+html {
+  @include max-laptop {
+    font-size: calc(var(--vw, 1vw) / $laptop-scale);
+  }
+
+  @include max-tablet {
+    font-size: calc(var(--vw, 1vw) / $tablet-scale);
+  }
+
+  @include max-mobile {
+    font-size: calc(var(--vw, 1vw) / $mobile-scale);
+  }
+
+  font-size: calc(var(--vw, 1vw) / $desktop-scale);
+}
+
+html.page--desktop-tablet {
+  @include max-laptop {
+    font-size: calc(var(--vw, 1vw) / $desktop-scale);
+  }
+
+  @include max-tablet {
+    font-size: calc(var(--vw, 1vw) / $tablet-scale);
+  }
+
+  @include max-mobile {
+    font-size: calc(var(--vw, 1vw) / $tablet-scale);
+  }
+
+  font-size: calc(var(--vw, 1vw) / $desktop-scale);
+}
+
+
+$default-fix-scale: 1;
+$laptop-fix-scale: calc($desktop-scale / $laptop-scale);
+$mobile-fix-scale: calc($tablet-scale / $mobile-scale);
+
+:root {
+  --fix-scale: #{$default-fix-scale};
+}
+
+:root.page--desktop-tablet {
+  --fix-scale: #{$default-fix-scale};
+
+  @include max-laptop {
+    --fix-scale: #{$laptop-fix-scale};
+  }
+
+  @include max-tablet {
+    --fix-scale: #{$default-fix-scale};
+  }
+
+  @include max-mobile {
+    --fix-scale: #{$mobile-fix-scale};
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: calc(100 * var(--vh, 1vh));
+
+  .header,
+  .footer {
+    flex-shrink: 0;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.scroll-lock-ios {
+  position: fixed;
+  overflow: hidden;
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+
+@media screen and (max-width: $max-mobile) {
+  .no-mobile-block {
+    display: none !important;
+  }
+
+  .is-tablet-block {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: $max-tablet) {
+  .is-desktop-block {
+    display: none !important;
+  }
+}
+
+a {
+  @include hover() {
+  }
+
+  background-color: transparent;
+  transition: color 0.3s;
+}
