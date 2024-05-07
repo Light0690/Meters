@@ -1,10 +1,10 @@
-import Start from "../components/Start";
+import Select from '../components/Select';
 import "./App.scss";
 
 const App = () => {
   return (
     <div className="app">
-      <Start />
+      <Select />
     </div>
   );
 };
