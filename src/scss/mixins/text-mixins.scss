@@ -204,100 +204,69 @@
 //   }
 // }
 
-// @mixin h3($isFixScale: false, $isFixLine: false) {
-//   @include max-laptop {
-//     font-size: use-rem-switch($isFixScale, 54px);
+@mixin h3 {
+  @include max-laptop {
+    font-size: use-rem( 54px);
+  }
 
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 54px);
-//     }
-//   }
+  @include max-tablet {
+    font-size: use-rem(40px);
+  }
 
-//   @include max-tablet {
-//     font-size: use-rem-switch($isFixScale, 40px);
+  @include max-mobile {
+    font-size: use-rem(24px);
+  }
 
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 40px);
-//     }
-//   }
+  font-family: $font-family;
+  font-size: use-rem(76px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+}
 
-//   @include max-mobile {
-//     font-size: use-rem-switch($isFixScale, 24px);
+@mixin h4UP {
+  @include max-laptop {
+    font-size: use-rem(48px);
+  }
 
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 24px);
-//     }
-//   }
+  @include max-tablet {
+    font-size: use-rem(32px);
+  }
 
-//   font-family: $font-family;
-//   font-size: use-rem-switch($isFixScale, 76px);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 120%;
-//   text-transform: uppercase;
+  @include max-mobile {
+    font-size: use-rem(24px);
+  }
 
-//   @if ($isFixLine) {
-//     @include fix-line($isFixScale, 76px);
-//   }
-// }
+  font-family: $font-family--second;
+  font-size: use-rem(60px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  text-transform: uppercase;
+}
 
-// @mixin h4UP($isFixScale: false, $isFixLine: false) {
-//   @include max-laptop {
-//     font-size: use-rem-switch($isFixScale, 48px);
+@mixin h4 {
+  @include max-laptop {
+    font-size: use-rem(40px);
+  }
 
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 48px);
-//     }
-//   }
+  @include max-tablet {
+    font-size: use-rem(32px);
+  }
 
-//   @include max-tablet {
-//     font-size: use-rem-switch($isFixScale, 32px);
+  @include max-mobile {
+    font-size: use-rem(22px);
+  }
 
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 32px);
-//     }
-//   }
-
-//   @include max-mobile {
-//     font-size: use-rem-switch($isFixScale, 24px);
-
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 32px);
-//     }
-//   }
-
-//   font-family: $font-family--second;
-//   font-size: use-rem-switch($isFixScale, 60px);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 100%;
-//   text-transform: uppercase;
-
-//   @if ($isFixLine) {
-//     @include fix-line($isFixScale, 60px);
-//   }
-// }
-
-// @mixin h4($isFixScale: false) {
-//   @include max-laptop {
-//     font-size: use-rem-switch($isFixScale, 40px);
-//   }
-
-//   @include max-tablet {
-//     font-size: use-rem-switch($isFixScale, 32px);
-//   }
-
-//   @include max-mobile {
-//     font-size: use-rem-switch($isFixScale, 22px);
-//   }
-
-//   font-family: $font-family;
-//   font-size: use-rem-switch($isFixScale, 48px);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 140%;
-//   text-transform: uppercase;
-// }
+  font-family: $font-family;
+  font-size: use-rem(48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: use-rem(3px);
+  text-transform: uppercase;
+}
 
 // @mixin h4-manrope($isFixScale: false) {
 //   @include max-laptop {
