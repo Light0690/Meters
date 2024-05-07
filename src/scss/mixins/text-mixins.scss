@@ -130,79 +130,47 @@
 //   }
 // }
 
-// @mixin h2G($isFixScale: false, $isFixLine: false) {
-//   @include max-laptop {
-//     font-size: use-rem-switch($isFixScale, 120px);
+@mixin h2G {
+  @include max-laptop {
+    font-size: use-rem(120px);
+  }
 
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 120px);
-//     }
-//   }
+  @include max-tablet {
+    font-size: use-rem(75px);
+  }
 
-//   @include max-tablet {
-//     font-size: use-rem-switch($isFixScale, 75px);
+  @include max-mobile {
+    font-size: use-rem(42px);
+  }
 
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 75px);
-//     }
-//   }
+  font-family: $font-family--second;
+  font-size: use-rem(150px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  text-transform: uppercase;
+}
 
-//   @include max-mobile {
-//     font-size: use-rem-switch($isFixScale, 42px);
+@mixin h3UP {
+  @include max-laptop {
+    font-size: use-rem(76px);
+  }
 
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 42px);
-//     }
-//   }
+  @include max-tablet {
+    font-size: use-rem(40px);
+  }
 
-//   font-family: $font-family--second;
-//   font-size: use-rem-switch($isFixScale, 150px);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 100%;
-//   text-transform: uppercase;
+  @include max-mobile {
+    font-size: use-rem(30px);
+  }
 
-//   @if ($isFixLine) {
-//     @include fix-line($isFixScale, 150px);
-//   }
-// }
-
-// @mixin h3UP($isFixScale: false, $isFixLine: false) {
-//   @include max-laptop {
-//     font-size: use-rem-switch($isFixScale, 76px);
-
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 76px);
-//     }
-//   }
-
-//   @include max-tablet {
-//     font-size: use-rem-switch($isFixScale, 40px);
-
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 40px);
-//     }
-//   }
-
-//   @include max-mobile {
-//     font-size: use-rem-switch($isFixScale, 30px);
-
-//     @if ($isFixLine) {
-//       @include fix-line($isFixScale, 30px);
-//     }
-//   }
-
-//   font-family: $font-family--second;
-//   font-size: use-rem-switch($isFixScale, 90px);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 100%;
-//   text-transform: uppercase;
-
-//   @if ($isFixLine) {
-//     @include fix-line($isFixScale, 90px);
-//   }
-// }
+  font-family: $font-family--second;
+  font-size: use-rem(90px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  text-transform: uppercase;
+}
 
 @mixin h3 {
   @include max-laptop {
