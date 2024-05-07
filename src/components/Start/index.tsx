@@ -1,11 +1,14 @@
 import { gsap } from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, Dispatch, SetStateAction, memo } from 'react';
 import iconImg from '../../assets/Start/icon.png';
 import splitTypeHelper from '../../utils/splitTypeHelper';
 import './Start.scss';
 
+interface IProps {
+  setIsEndAnimate: Dispatch<SetStateAction<boolean>>;
+}
 
-const Start = () => {
+const Start = ({ setIsEndAnimate } : IProps) => {
   const wrapper = useRef(null);
   const icon = useRef(null);
   const bigTitle = useRef(null);
@@ -20,7 +23,7 @@ const Start = () => {
     splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' });
 
     tl
-      .to(wrapper.current, {  opacity: 0, duration: 1.5, ease: 'circ.out' })
+      .to(wrapper.current, {  opacity: 0, duration: 5, ease: 'circ.out', onStart: () => setIsEndAnimate(true)} )
       .to(wrapper.current, {  width: 0, duration: 2, ease: 'circ.out' }, '<');
   });
 
@@ -41,4 +44,4 @@ const Start = () => {
   );
 };
 
-export default Start;
+export default memo(Start);

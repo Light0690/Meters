@@ -6,7 +6,9 @@
   align-items: center;
   gap: use-rem(50px);
   background-color: $section-bg-dark;
+  position: relative;
   overflow: hidden;
+  z-index: 2;
 
   &__container {
     @include size(use-rem(200px));
