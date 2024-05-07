@@ -1,0 +1,46 @@
+.select {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &__city {
+    width: 0%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    cursor: pointer;
+  }
+
+  &__city-title, &__city-container-img {
+    position: absolute;
+  }
+
+  &__city-title {
+    @include h3UP;
+    color: $white;
+  }
+
+  &__city-container-img {
+    @include size(150%);
+    z-index: -1;
+    filter: blur(3px)
+  }
+
+  &__city-img {
+    @include size(100%);
+    object-fit: cover;
+    object-position: center center;
+  }
+} 
