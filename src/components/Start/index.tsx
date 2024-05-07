@@ -14,12 +14,14 @@ const Start = () => {
   useEffect(() => {
     const tl = gsap.timeline({});
 
-    tl.from(icon.current, { width: 0, duration: 1.5, ease: 'circ.out' })
+    tl.from(icon.current, { width: 0, duration: 1.5, ease: 'circ.out' });
 
-    splitTypeHelper(bigTitle.current, tl)
-    splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' })
+    splitTypeHelper(bigTitle.current, tl);
+    splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' });
 
-    tl.to(wrapper.current, { width: 0, opacity: 0, duration: 2, ease: 'circ.out' })
+    tl
+      .to(wrapper.current, {  opacity: 0, duration: 1.5, ease: 'circ.out' })
+      .to(wrapper.current, {  width: 0, duration: 2, ease: 'circ.out' }, '<');
   });
 
   return (
