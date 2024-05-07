@@ -1,21 +1,25 @@
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
 import iconImg from '../../assets/Start/icon.png';
+import splitTypeHelper from '../../utils/splitTypeHelper';
 import './Start.scss';
+
 
 const Start = () => {
   const wrapper = useRef(null);
   const icon = useRef(null);
-  const text = useRef(null);
+  const bigTitle = useRef(null);
+  const smallTitle = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({});
 
-    tl
-      .from(icon.current, { width: 0, duration: 1.5, ease: 'circ.out' })
-      .from(text.current, { yPercent: 100, duration: 1.5, ease: 'circ.out' }, '<+=15%')
-      .to(wrapper.current, { opacity: 0, duration: 1.5, ease: 'circ.out' })
-      .to(wrapper.current, { display: 'none' });
+    tl.from(icon.current, { width: 0, duration: 1.5, ease: 'circ.out' })
+
+    splitTypeHelper(bigTitle.current, tl)
+    splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' })
+
+    tl.to(wrapper.current, { width: 0, opacity: 0, duration: 2, ease: 'circ.out' })
   });
 
   return (
@@ -26,9 +30,10 @@ const Start = () => {
         </div>
       </div>
       <div className='start__container-title'>
-        <div className='start__title' ref={text}>
+        <h1 className='start__big-title' ref={bigTitle}>
           Метры
-        </div>
+        </h1>
+        <h4 className='start__small-title' ref={smallTitle}>группа компаний</h4>
       </div>
     </div>
   );

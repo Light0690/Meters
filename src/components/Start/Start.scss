@@ -1,5 +1,3 @@
-@import '../../scss/all.scss';
-
 .start {
   width: 100%;
   height: 100vh;
@@ -8,6 +6,7 @@
   align-items: center;
   gap: use-rem(50px);
   background-color: $section-bg-dark;
+  overflow: hidden;
 
   &__container {
     @include size(use-rem(200px));
@@ -26,12 +25,16 @@
   }
 
   &__container-title {
+    color: $white;
+    text-wrap: nowrap;
     overflow: hidden;
   }
 
-  &__title {
+  &__big-title {
     @include h1A;
-    color: $white;
-    overflow: hidden;
+  }
+
+  &__small-title {
+    @include h4;
   }
 }
