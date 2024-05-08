@@ -1,3 +1,4 @@
+import gsap from 'gsap';
 import SplitType from 'split-type';
 
 /**
@@ -5,7 +6,7 @@ import SplitType from 'split-type';
  * @param { target } <NodeList || HTMLElement>
  * @returns { string } text&nbsp;text -> <span>texttext</span>
  */
-const getNonDividingSpace = (target: Object) => {
+const getNonDividingSpace = (target: any) => {
   const titles = NodeList.prototype.isPrototypeOf(target) ? [...target] : [target];
 
   titles.forEach((title) => {
@@ -27,7 +28,7 @@ const getNonDividingSpace = (target: Object) => {
 };
 
 const optionsDefault = { yPercent: 100, ease: 'circ.out', duration: 1 };
-const positionDefault = (index: number) => (index === 0 ? '0' : '<+=25%');
+const positionDefault = (index: number):string | number => (index === 0 ? '0' : '<+=25%');
 
 /**
  * Корректирует текст с помощью getNonDividingSpace и анимирует его с помощью SplitType
@@ -37,12 +38,12 @@ const positionDefault = (index: number) => (index === 0 ? '0' : '<+=25%');
  * @param { position? } function - position для анимации
  * @returns { undefined }
  */
-const splitTypeHelper = (target: any, tl: gsap.core.Timeline, { options = optionsDefault, position = positionDefault }: options | null = {}): undefined => {
+const splitTypeHelper = (target: any, tl: gsap.core.Timeline, { options = optionsDefault, position = positionDefault } = {}) => {
   if (!target) return;
 
   const splitedTitle = new SplitType(getNonDividingSpace(target), { types: ['lines', 'words'] });
 
-  splitedTitle.lines.forEach((line, index) => {
+  splitedTitle!.lines!.forEach((line, index) => {
     const words = line.querySelectorAll('.word');
 
     if (!words.length) return;
