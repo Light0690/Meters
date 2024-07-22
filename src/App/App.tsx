@@ -1,10 +1,18 @@
-import Start from "../components/Start";
+import { Routes, Route } from "react-router-dom";
+
+import Main from '../pages/Main';
+
 import "./App.scss";
 
 const App = () => {
   return (
     <div className="app">
-      <Start />
+      <Routes>
+        <Route 
+          path='/'
+          element={ <Main/> }
+        />
+      </Routes>
     </div>
   );
 };
