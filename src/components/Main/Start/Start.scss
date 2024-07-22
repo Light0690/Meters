@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
   gap: use-rem(50px);
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: $section-bg-dark;
   overflow: hidden;
 
