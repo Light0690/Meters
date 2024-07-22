@@ -1,12 +1,12 @@
 import Hero from '../../components/Main/Hero';
 import Start from '../../components/Main/Start';
 
-import './Main.scss';
+import styles from './Main.module.scss';
 
 const Main = () => {
   return (
-    <div className="main">
-      <Start/>
+    <div className={styles.main}>
+      <Start />
       <Hero />
     </div>
   );

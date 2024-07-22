@@ -30,11 +30,10 @@
 
   &__container-title {
     color: $white;
+  }
 
-    .line {
-      text-wrap: nowrap;
-      overflow: hidden;
-    }
+  &__big-title, &__small-title{
+    overflow: hidden;
   }
 
   &__big-title {

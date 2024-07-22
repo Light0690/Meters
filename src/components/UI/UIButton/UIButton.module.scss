@@ -4,7 +4,6 @@
     padding: use-rem(40px 100px);
     @include h5;
     color: $white;
-    outline: none;
     transition: all 0.5s;
 
     @include max-laptop {

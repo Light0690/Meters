@@ -2,11 +2,11 @@ import { Routes, Route } from "react-router-dom";
 
 import Main from '../pages/Main';
 
-import "./App.scss";
+import styles from './App.module.scss';
 
 const App = () => {
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Routes>
         <Route 
           path='/'

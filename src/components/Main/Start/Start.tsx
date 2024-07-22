@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import iconImg from '../../../assets/Main/icon.png';
 import splitTypeHelper from '../../../utils/splitTypeHelper';
 
-import './Start.scss';
+import styles from './Start.module.scss';
 
 const Start = () => {
   const wrapper = useRef(null);
@@ -21,21 +21,20 @@ const Start = () => {
 
     tl
       .to(wrapper.current, { opacity: 0, zIndex: -1, duration: 2 })
-      // .to(wrapper.current, { yPercent: -100, duration: 4 }, '<')
   });
 
   return (
-    <div className='start' ref={wrapper}>
-      <div className='start__container'>
-        <div className='start__container-icon' ref={icon}>
-          <img className='start__icon' src={iconImg} alt='icon' />
+    <div className={styles.start} ref={wrapper}>
+      <div className={styles.start__container}>
+        <div className={styles['start__container-icon']} ref={icon}>
+          <img className={styles.start__icon} src={iconImg} alt='icon' />
         </div>
       </div>
-      <div className='start__container-title'>
-        <h1 className='start__big-title' ref={bigTitle}>
+      <div className={styles['start__container-title']}>
+        <h1 className={styles['start__big-title']} ref={bigTitle}>
           Метры
         </h1>
-        <h4 className='start__small-title' ref={smallTitle}>группа компаний</h4>
+        <h4 className={styles['start__small-title']} ref={smallTitle}>группа компаний</h4>
       </div>
     </div>
   );
