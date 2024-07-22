@@ -1,0 +1,84 @@
+.hero {
+    @include size(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    &__container-img {
+        @include size(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        overflow: hidden;
+
+        &:after {
+            content: '';
+            display: block;
+            @include size(100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 60%) 0%, rgba(0, 0, 0, 60%) 100%);
+            position: absolute;
+            top: auto;
+            bottom: 0;
+        }
+    }
+
+    &__img {
+        @include size(100%);
+        object-fit: cover;
+        object-position: center center;  
+    }
+
+    &__content {
+        padding: use-rem(300px 120px);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: $white;
+
+        @include max-laptop {
+            padding: use-rem(150px 80px);
+        }
+    }
+
+    &__container-titles {
+        display: flex;
+        flex-direction: column;
+        gap: use-rem(20px);
+    }
+
+    &__title-big {
+        width: 80%;
+        @include h3;
+    }
+
+    &__title-small {
+        width: 60%;
+        @include h5;
+    }
+    
+    &__list {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: use-rem(40px);
+    }
+
+    &__list-item {
+        padding-bottom: use-rem(20px);
+        border-bottom: use-rem(1px) solid $white;
+        @include h6UP;
+    }
+
+    &__btns {
+        width: 100%;
+        height: use-rem(80px);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: use-rem(50px);
+    }
+}
