@@ -1,0 +1,17 @@
+.wrapper {
+    &__button {
+        border: use-rem(1px) solid $white;
+        padding: use-rem(40px 100px);
+        @include h5;
+        color: $white;
+        outline: none;
+
+        @include max-laptop {
+            padding: use-rem(30px 90px); 
+        }
+    }   
+
+    .outline {
+        background: transparent;
+    }
+}
