@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
-import iconImg from '../../../assets/Start/icon.png';
+import iconImg from '../../../assets/Main/icon.png';
 import splitTypeHelper from '../../../utils/splitTypeHelper';
 
 import './Start.scss';
@@ -20,7 +20,8 @@ const Start = () => {
     splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' });
 
     tl
-      .to(wrapper.current, { yPercent: -30, opacity: 0, duration: 2 })
+      .to(wrapper.current, { opacity: 0, zIndex: -1, duration: 2 })
+      // .to(wrapper.current, { yPercent: -100, duration: 4 }, '<')
   });
 
   return (
