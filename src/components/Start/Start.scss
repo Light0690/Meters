@@ -26,8 +26,11 @@
 
   &__container-title {
     color: $white;
-    text-wrap: nowrap;
-    overflow: hidden;
+
+    .line {
+      text-wrap: nowrap;
+      overflow: hidden;
+    }
   }
 
   &__big-title {

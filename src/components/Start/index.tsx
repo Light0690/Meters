@@ -16,12 +16,11 @@ const Start = () => {
 
     tl.from(icon.current, { width: 0, duration: 1.5, ease: 'circ.out' });
 
-    splitTypeHelper(bigTitle.current, tl);
+    splitTypeHelper(bigTitle.current, tl, {options: { yPercent: 100, ease: 'circ.out', duration: 1.5 }});
     splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' });
 
     tl
-      .to(wrapper.current, {  opacity: 0, duration: 1.5, ease: 'circ.out' })
-      .to(wrapper.current, {  width: 0, duration: 2, ease: 'circ.out' }, '<');
+      .to(wrapper.current, { yPercent: -30, opacity: 0, duration: 2 })
   });
 
   return (
