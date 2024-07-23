@@ -4,10 +4,10 @@ import styles from './UIButton.module.scss';
 
 interface props {
   text: string;
-  type?: 'outline';
+  type?: 'transparent';
 }
 
-const UIButton = ({ text, type = 'outline'}: props) => {
+const UIButton = ({ text, type = 'transparent'}: props) => {
   return (
     <div className={styles.wrapper}>
       <button className={cn(styles.wrapper__button, styles[type])}>{text}</button>

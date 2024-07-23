@@ -1,10 +1,16 @@
+import cn from 'classnames';
+
 import styles from './Header.module.scss';
 
-const Header = () => {
+interface props {
+  type?: 'transparent'
+}
+
+const Header = ({ type = 'transparent' } : props) => {
   return (
-    <div className={styles.header}>
+    <header className={cn(styles.header, styles[type])}>
       qwe
-    </div>
+    </header>
   );
 };
 
