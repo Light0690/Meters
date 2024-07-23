@@ -25,7 +25,7 @@ const Start = () => {
     if(bigTitle.current) splitTypeHelper(bigTitle.current, tl, { options: { yPercent: 100, ease: 'circ.out', duration: 1.5 }});
     if(smallTitle.current) splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' });
 
-    // tl.to(wrapper.current, { opacity: 0, zIndex: -1, duration: 0.5, onComplete: () => scrollLock.enableScrolling()})
+    tl.to(wrapper.current, { opacity: 0, zIndex: -1, duration: 0.5, onComplete: () => scrollLock.enableScrolling()})
   });
 
   return (
