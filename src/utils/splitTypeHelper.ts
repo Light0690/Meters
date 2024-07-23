@@ -5,8 +5,8 @@ import SplitType from 'split-type';
  * @param { target } <NodeList || HTMLElement>
  * @returns { string } text&nbsp;text -> <span>texttext</span>
  */
-const getNonDividingSpace = (target: Object) => {
-  const titles = NodeList.prototype.isPrototypeOf(target) ? [...target] : [target];
+const getNonDividingSpace = (target: HTMLElement): any[] => {
+  const titles = NodeList.prototype.isPrototypeOf(target) ? [...(target as unknown as [])] : [target];
 
   titles.forEach((title) => {
     /**
@@ -37,12 +37,12 @@ const positionDefault = (index: number) => (index === 0 ? '0' : '<+=25%');
  * @param { position? } function - position для анимации
  * @returns { undefined }
  */
-const splitTypeHelper = (target: any, tl: gsap.core.Timeline, { options = optionsDefault, position = positionDefault }: options | null = {}): undefined => {
+const splitTypeHelper = (target: HTMLElement, tl: gsap.core.Timeline, { options = optionsDefault, position = positionDefault }): undefined => {
   if (!target) return;
 
   const splitedTitle = new SplitType(getNonDividingSpace(target), { types: ['lines', 'words'] });
 
-  splitedTitle.lines.forEach((line, index) => {
+  splitedTitle?.lines?.forEach((line, index) => {
     const words = line.querySelectorAll('.word');
 
     if (!words.length) return;
