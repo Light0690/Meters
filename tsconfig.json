@@ -4,8 +4,10 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
       "@ui/*": ["src/components/UI/*"],
       "@pages/*": ["src/pages/*"],
+      "@routes/*": ["src/routes/*"],
       "@utils/*": ["src/utils/*"],
     },
     "target": "ES2020",
