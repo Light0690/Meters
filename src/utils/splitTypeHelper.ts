@@ -27,7 +27,7 @@ const getNonDividingSpace = (target: HTMLElement): any[] => {
 };
 
 const optionsDefault = { yPercent: 100, ease: 'circ.out', duration: 1 };
-const positionDefault = (index: number) => (index === 0 ? '0' : '<+=25%');
+const positionDefault = (index: number): string => (index === 0 ? '0' : '<+=25%');
 
 /**
  * Корректирует текст с помощью getNonDividingSpace и анимирует его с помощью SplitType
