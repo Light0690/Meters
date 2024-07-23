@@ -5,37 +5,20 @@ $tablet-scale: 7.68; // 768px
 $mobile-scale: 3.75; // 375px
 
 html {
+  font-size: calc(1vw / $desktop-scale);
+
   @include max-laptop {
-    font-size: calc(var(--vw, 1vw) / $laptop-scale);
+    font-size: calc(1vw / $laptop-scale);
   }
 
   @include max-tablet {
-    font-size: calc(var(--vw, 1vw) / $tablet-scale);
+    font-size: calc(1vw / $tablet-scale);
   }
 
   @include max-mobile {
-    font-size: calc(var(--vw, 1vw) / $mobile-scale);
+    font-size: calc(1vw / $mobile-scale);
   }
-
-  font-size: calc(var(--vw, 1vw) / $desktop-scale);
 }
-
-html.page--desktop-tablet {
-  @include max-laptop {
-    font-size: calc(var(--vw, 1vw) / $desktop-scale);
-  }
-
-  @include max-tablet {
-    font-size: calc(var(--vw, 1vw) / $tablet-scale);
-  }
-
-  @include max-mobile {
-    font-size: calc(var(--vw, 1vw) / $tablet-scale);
-  }
-
-  font-size: calc(var(--vw, 1vw) / $desktop-scale);
-}
-
 
 $default-fix-scale: 1;
 $laptop-fix-scale: calc($desktop-scale / $laptop-scale);
@@ -43,43 +26,6 @@ $mobile-fix-scale: calc($tablet-scale / $mobile-scale);
 
 :root {
   --fix-scale: #{$default-fix-scale};
-}
-
-:root.page--desktop-tablet {
-  --fix-scale: #{$default-fix-scale};
-
-  @include max-laptop {
-    --fix-scale: #{$laptop-fix-scale};
-  }
-
-  @include max-tablet {
-    --fix-scale: #{$default-fix-scale};
-  }
-
-  @include max-mobile {
-    --fix-scale: #{$mobile-fix-scale};
-  }
-}
-
-.wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: calc(100 * var(--vh, 1vh));
-
-  .header,
-  .footer {
-    flex-shrink: 0;
-  }
-
-  main {
-    flex-grow: 1;
-  }
-}
-
-.visually-hidden {
-  @include visually-hidden;
 }
 
 .scroll-lock-ios {
@@ -122,9 +68,6 @@ $mobile-fix-scale: calc($tablet-scale / $mobile-scale);
 }
 
 a {
-  @include hover() {
-  }
-
   background-color: transparent;
   transition: color 0.3s;
 }
