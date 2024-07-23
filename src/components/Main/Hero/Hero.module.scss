@@ -1,11 +1,30 @@
 .hero {
-    @include size(100%);
+    width: 100%;
+    height: 100vh;
+    padding: use-rem(200px 120px 100px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: use-rem(300px);
+    position: relative;
     overflow: hidden;
     
+    @include max-laptop {
+        padding: use-rem(150px 80px 80px);
+        gap: use-rem(250px);
+    }
+
+    @include max-tablet {
+        padding: use-rem(100px 40px 40px);
+        gap: use-rem(260px);
+    }
+
+    @include max-mobile {
+        padding: use-rem(80px 10px 20px);
+        gap: use-rem(100px);
+    }
+
     &__container-img {
         @include size(100%);
         position: absolute;
@@ -32,26 +51,27 @@
     }
 
     &__content {
-        padding: use-rem(300px 120px);
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         color: $white;
-
-        @include max-laptop {
-            padding: use-rem(150px 80px);
-        }
     }
 
     &__container-titles {
+        width: 60%;
         display: flex;
         flex-direction: column;
         gap: use-rem(20px);
+
+        @include max-mobile {
+            width: 100%;
+        }
     }
 
     &__title-big {
-        width: 80%;
+        width: 100%;
         @include h3;
     }
 
@@ -65,6 +85,10 @@
         display: flex;
         flex-direction: column;
         gap: use-rem(40px);
+
+        @include max-mobile {
+            display: none;
+        }
     }
 
     &__list-item {
@@ -75,7 +99,6 @@
 
     &__btns {
         width: 100%;
-        height: use-rem(80px);
         display: flex;
         flex-direction: row;
         justify-content: center;

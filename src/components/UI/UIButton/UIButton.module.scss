@@ -4,6 +4,14 @@
       padding: use-rem(30px 90px); 
     }
 
+    @include max-tablet {
+      padding: use-rem(20px 80px); 
+    }
+
+    @include max-mobile {
+      padding: use-rem(15px 40px); 
+    }
+
     @include h5;
     border: use-rem(1px) solid $white;
     padding: use-rem(40px 100px);
