@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 
 import { routes } from '@routes/routes';
 
+import Layout from '@components/common/Layout';
+
 import styles from './App.module.scss';
 
 const App = () => {
@@ -12,7 +14,11 @@ const App = () => {
           return (
             <Route 
               path={route.path}
-              element={<route.element />}
+              element={
+                <Layout>
+                  <route.element />
+                </Layout>
+              }
               key={id}
             />
           )
