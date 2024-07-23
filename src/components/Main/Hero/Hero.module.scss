@@ -11,8 +11,8 @@
     overflow: hidden;
     
     @include max-laptop {
-        padding: use-rem(150px 80px 80px);
-        gap: use-rem(250px);
+        padding: use-rem(200px 100px 80px);
+        gap: use-rem(200px);
     }
 
     @include max-tablet {
