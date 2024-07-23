@@ -1,9 +1,91 @@
 .header {
+  padding: use-rem(50px);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: use-rem(200px);
 
-    &.transparent {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
+  @include max-laptop {
+    padding: use-rem(25px);
+  }
+
+  @include max-tablet {
+    padding: use-rem(20px);
+  }
+
+  // @include max-mobile {
+  //   padding: use-rem(20px);
+  // }
+
+  &.transparent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__container-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: use-rem(10px)
+  }
+
+  &__logo {
+    @include size(use-rem(80px));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include max-laptop {
+      @include size(use-rem(60px));
     }
+
+    @include max-tablet {
+      @include size(use-rem(40px));
+    }
+
+    // @include max-laptop {
+    //   @include size(use-rem(60px));
+    // }
+  }
+
+  &__img {
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+
+  &__title {
+    color: $white;
+
+    &--big {
+      @include body-medium-up;
+    }
+
+    &--small {
+      @include body-small;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: use-rem(50px);
+  }
+
+  &__elem {
+    color: $white;
+    @include h6;
+  }
 }
