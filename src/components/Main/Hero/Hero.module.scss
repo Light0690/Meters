@@ -21,7 +21,7 @@
     }
 
     @include max-mobile {
-        padding: use-rem(80px 10px 20px);
+        padding: use-rem(80px 20px 20px);
         gap: use-rem(100px);
     }
 
@@ -78,6 +78,10 @@
     &__title-small {
         width: 60%;
         @include h5;
+
+        @include max-mobile {
+            width: 100%;
+        }
     }
     
     &__list {
