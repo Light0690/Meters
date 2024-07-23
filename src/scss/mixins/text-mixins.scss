@@ -292,213 +292,59 @@
   }
 }
 
+@mixin body-medium {
+  font-family: $font-family--second;
+  font-size: use-rem(32px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
 
-// @mixin body-medium {
-//   @include max-laptop {
-//     font-size: use-rem(28px);
-//   }
+  @include max-laptop {
+    font-size: use-rem(28px);
+  }
 
-//   @include max-tablet {
-//     font-size: use-rem(18px);
-//   }
+  @include max-tablet {
+    font-size: use-rem(18px);
+  }
 
-//   @include max-mobile {
-//     font-size: use-rem(16px);
-//   }
+  @include max-mobile {
+    font-size: use-rem(16px);
+  }
+}
 
-//   font-family: $font-family--second;
-//   font-size: use-rem(32px);
-//   font-style: normal;
-//   font-weight: 500;
-//   line-height: 160%;
-// }
+@mixin body-medium-up {
+  font-family: $font-family--second;
+  font-size: use-rem(32px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+  text-transform: uppercase;
 
-// @mixin body-quote {
-//   font-family: $font-family--quote;
-//   font-size: use-rem(32px);
-//   font-style: normal;
-//   font-weight: 500;
-//   line-height: 160%;
-// }
+  @include max-laptop {
+    font-size: use-rem(32px);
+  }
 
-// @mixin body-medium-up {
-//   @include max-laptop {
-//     font-size: use-rem(32px);
-//   }
+  @include max-tablet {
+    font-size: use-rem(24px);
+  }
 
-//   @include max-tablet {
-//     font-size: use-rem(24px);
-//   }
+  @include max-mobile {
+    font-size: use-rem(18px);
+  }
+}
 
-//   @include max-mobile {
-//     font-size: use-rem(18px);
-//   }
+@mixin body-small {
+  font-family: $font-family--second;
+  font-size: use-rem(24px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
 
-//   font-family: $font-family--second;
-//   font-size: use-rem(32px);
-//   font-style: normal;
-//   font-weight: 500;
-//   line-height: 160%;
-//   text-transform: uppercase;
-// }
+  @include max-tablet {
+    font-size: use-rem(16px);
+  }
 
-// @mixin body-small {
-//   @include max-tablet {
-//     font-size: use-rem(16px);
-//   }
-
-//   @include max-mobile {
-//     font-size: use-rem(14px);
-//   }
-
-//   font-family: $font-family--second;
-//   font-size: use-rem(24px);
-//   font-style: normal;
-//   font-weight: 500;
-//   line-height: 160%;
-// }
-
-// @mixin button {
-//   @include max-laptop {
-//     font-size: use-rem(18px);
-//     letter-spacing: use-rem(1px);
-
-//   }
-
-//   @include max-tablet {
-//     letter-spacing: use-rem(0px);
-//   }
-
-//   @include max-mobile {
-//     font-size: use-rem(14px);
-
-//   }
-
-//   font-family: $font-family--second;
-//   font-size: use-rem(24px);
-//   font-style: normal;
-//   font-weight: 600;
-//   line-height: 100%;
-//   letter-spacing: use-rem(0.72px);
-//   text-transform: uppercase;
-
-// }
-
-// @mixin slider {
-//   @include max-laptop {
-//     font-size: use-rem( 26px);
-
-//   }
-
-//   @include max-tablet {
-//     font-size: use-rem( 20px);
-
-//   }
-
-//   @include max-mobile {
-//     font-size: use-rem( 16px);
-
-//   }
-
-//   font-family: $font-family;
-//   font-feature-settings: 'clig' off, 'liga' off;
-//   font-size: use-rem( 28px);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 100%;
-//   text-transform: uppercase;
-
-// }
-
-// @mixin caption {
-//   font-family: $font-family--second;
-//   font-size: use-rem( 14px);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 130%;
-// }
-
-// @mixin medal-count {
-//   @include max-laptop {
-//     font-size: use-rem( 24px);
-//     font-weight: 500;
-//     line-height: 150%;
-//   }
-
-//   @include max-tablet {
-//     font-size: use-rem( 12px);
-//     font-weight: 400;
-//     line-height: 100%;
-//   }
-
-//   font-family: $font-family--second;
-//   font-size: use-rem( 18.667px);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 130%;
-// }
-
-// @mixin quote-text {
-//   @include max-laptop {
-//     font-size: use-rem( 26px);
-//   }
-
-//   @include max-tablet {
-//     font-size: use-rem( 22px);
-//   }
-
-//   @include max-mobile {
-//     font-size: use-rem( 16px);
-//   }
-
-//   font-family: $font-family--italic;
-//   font-feature-settings: 'clig' off, 'liga' off;
-//   font-size: use-rem( 32px);
-//   font-style: italic;
-//   font-weight: 400;
-//   line-height: 120.5%;
-// }
-
-// @mixin quote-text-second {
-//   @include max-laptop {
-//     font-size: use-rem( 33px);
-//   }
-
-//   @include max-tablet {
-//     font-size: use-rem( 27px);
-//   }
-
-//   @include max-mobile {
-//     font-size: use-rem( 22px);
-//   }
-
-//   font-family: $font-family--italic;
-//   font-size: use-rem( 39px);
-//   font-style: italic;
-//   line-height: 120.5%;
-// }
-
-// @mixin titles-number {
-//   @include max-laptop {
-//     font-size: use-rem(90px);
-
-//   }
-
-//   @include max-tablet {
-//     font-size: use-rem(56px);
-
-//   }
-
-//   @include max-mobile {
-//     font-size: use-rem(32px);
-
-//   }
-
-//   font-family: $font-family;
-//   font-size: use-rem(120px);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 100%;
-//   text-transform: uppercase;
-
-// }
+  @include max-mobile {
+    font-size: use-rem(14px);
+  }
+}
