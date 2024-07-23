@@ -292,32 +292,12 @@
   }
 }
 
-@mixin body-medium {
-  font-family: $font-family--second;
-  font-size: use-rem(32px);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 160%;
-
-  @include max-laptop {
-    font-size: use-rem(28px);
-  }
-
-  @include max-tablet {
-    font-size: use-rem(18px);
-  }
-
-  @include max-mobile {
-    font-size: use-rem(16px);
-  }
-}
-
 @mixin body-medium-up {
   font-family: $font-family--second;
   font-size: use-rem(32px);
   font-style: normal;
   font-weight: 500;
-  line-height: 160%;
+  line-height: 100%;
   text-transform: uppercase;
 
   @include max-laptop {
@@ -333,12 +313,32 @@
   }
 }
 
+@mixin body-medium {
+  font-family: $font-family--second;
+  font-size: use-rem(32px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+
+  @include max-laptop {
+    font-size: use-rem(28px);
+  }
+
+  @include max-tablet {
+    font-size: use-rem(18px);
+  }
+
+  @include max-mobile {
+    font-size: use-rem(16px);
+  }
+}
+
 @mixin body-small {
   font-family: $font-family--second;
   font-size: use-rem(24px);
   font-style: normal;
   font-weight: 500;
-  line-height: 160%;
+  line-height: 100%;
 
   @include max-tablet {
     font-size: use-rem(16px);
