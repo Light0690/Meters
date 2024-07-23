@@ -1,5 +1,5 @@
-import Hero from '../../components/Main/Hero';
-import Start from '../../components/Main/Start';
+import Hero from '@components/Main/Hero';
+import Start from '@components/Main/Start';
 
 import styles from './Main.module.scss';
 

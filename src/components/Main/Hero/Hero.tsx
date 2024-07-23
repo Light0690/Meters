@@ -1,5 +1,5 @@
-import heroImg from '../../../assets/Main/hero.jpg';
-import UIButton from '../../UI/UIButton';
+import heroImg from '@assets/Main/hero.jpg';
+import UIButton from '@ui/UIButton';
 
 import styles from './Hero.module.scss';
 

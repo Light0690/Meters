@@ -1,7 +1,8 @@
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
-import iconImg from '../../../assets/Main/icon.png';
-import splitTypeHelper from '../../../utils/splitTypeHelper';
+
+import iconImg from '@assets/Main/icon.png';
+import splitTypeHelper from '@utils/splitTypeHelper';
 
 import styles from './Start.module.scss';
 
