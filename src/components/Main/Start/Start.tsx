@@ -1,8 +1,10 @@
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
 
-import iconImg from '@assets/Main/icon.png';
 import splitTypeHelper from '@utils/splitTypeHelper';
+import { ScrollLock } from '@utils/scrollLock';
+
+import iconImg from '@assets/Main/icon.png';
 
 import styles from './Start.module.scss';
 
@@ -11,17 +13,19 @@ const Start = () => {
   const icon = useRef(null);
   const bigTitle = useRef(null);
   const smallTitle = useRef(null);
+  const scrollLock = new ScrollLock()
 
   useEffect(() => {
+    scrollLock.disableScrolling();
+
     const tl = gsap.timeline({});
 
     tl.from(icon.current, { width: 0, duration: 1.5, ease: 'circ.out' });
 
-    splitTypeHelper(bigTitle.current, tl, {options: { yPercent: 100, ease: 'circ.out', duration: 1.5 }});
-    splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' });
+    if(bigTitle.current) splitTypeHelper(bigTitle.current, tl, { options: { yPercent: 100, ease: 'circ.out', duration: 1.5 }});
+    if(smallTitle.current) splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' });
 
-    tl
-      .to(wrapper.current, { opacity: 0, zIndex: -1, duration: 2 })
+    tl.to(wrapper.current, { opacity: 0, zIndex: -1, duration: 0.5, onComplete: () => scrollLock.enableScrolling() })
   });
 
   return (
