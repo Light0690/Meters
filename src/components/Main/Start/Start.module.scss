@@ -11,21 +11,33 @@
   z-index: 1;
   background-color: $section-bg-dark;
   overflow: hidden;
+  
+  @include max-mobile {
+    gap: use-rem(20px);
+  }
 
   &__container {
     @include size(use-rem(200px));
+
+    @include max-mobile {
+      @include size(use-rem(100px));
+    }
   }
 
   &__container-icon {
-    @include size(use-rem(200px));
+    @include size(100%);
     overflow: hidden;
   }
 
   &__icon {
     min-width: use-rem(200px);
-    @include size(use-rem(200px));
+    @include size(100%);
     object-fit: contain;
     object-position: center center;
+
+    @include max-mobile {
+      min-width: use-rem(100px);
+    }
   }
 
   &__container-title {
@@ -42,5 +54,9 @@
 
   &__small-title {
     @include h4;
+
+    @include max-mobile {
+      font-size: use-rem(18px);
+    }
   }
 }
