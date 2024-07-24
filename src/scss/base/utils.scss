@@ -69,5 +69,6 @@ $mobile-fix-scale: calc($tablet-scale / $mobile-scale);
 
 a {
   background-color: transparent;
-  transition: color 0.3s;
+  text-decoration: none;
+  transition: all 0.5s;
 }

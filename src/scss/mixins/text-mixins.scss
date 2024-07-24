@@ -219,7 +219,7 @@
   font-family: $font-family--second;
   font-size: use-rem(32px);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 100%;
   letter-spacing: use-rem(0.96px);
   text-transform: uppercase;
@@ -229,7 +229,7 @@
   font-family: $font-family--second;
   font-size: use-rem(32px);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 100%;
 
   @include max-laptop {
@@ -335,16 +335,21 @@
 
 @mixin body-small {
   font-family: $font-family--second;
-  font-size: use-rem(24px);
+  font-size: use-rem(20px);
+  letter-spacing: use-rem(1px);
   font-style: normal;
   font-weight: 500;
   line-height: 100%;
 
+  @include max-laptop {
+    font-size: use-rem(18px);
+  }
+
   @include max-tablet {
-    font-size: use-rem(16px);
+    font-size: use-rem(14px);
   }
 
   @include max-mobile {
-    font-size: use-rem(14px);
+    font-size: use-rem(12px);
   }
 }
