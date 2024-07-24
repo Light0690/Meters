@@ -1,18 +1,18 @@
 .header {
-  padding: use-rem(50px);
+  padding: use-rem(50px 200px);
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: use-rem(200px);
+  justify-content: space-between;
+  overflow: hidden;
 
   @include max-laptop {
-    padding: use-rem(25px);
+    padding: use-rem(25px 100px);
   }
 
   @include max-tablet {
-    padding: use-rem(20px);
+    padding: use-rem(20px 80px);
   }
 
   // @include max-mobile {
@@ -34,17 +34,17 @@
   }
 
   &__logo {
-    @include size(use-rem(80px));
+    @include size(use-rem(60px));
     display: flex;
     justify-content: center;
     align-items: center;
 
     @include max-laptop {
-      @include size(use-rem(60px));
+      @include size(use-rem(40px));
     }
 
     @include max-tablet {
-      @include size(use-rem(40px));
+      // @include size(use-rem(30px));
     }
 
     // @include max-laptop {
@@ -86,6 +86,25 @@
 
   &__elem {
     color: $white;
+    position: relative;
     @include h6;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0%;
+      height: use-rem(1px);
+      background-color: $white;
+      position: absolute;
+      top: auto;
+      bottom: use-rem(-5px);
+      transition: width 0.5s;
+    }
+
+    @include hover {
+      &:after {
+        width: 100%;
+      }
+    }
   }
 }
