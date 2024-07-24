@@ -5,8 +5,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  overflow-x: clip;//не будет работать на старых браузерах
-
 
   @include max-laptop {
     padding: use-rem(25px 100px);
