@@ -28,8 +28,8 @@ const Hero = () => {
       </div>
       <div className={styles.hero__content}> 
         <div ref={titles} className={styles['hero__container-titles']}>
-          <h3 className={styles['hero__title-big']}>Квартиры - студии в&nbsp;историческом центре</h3>
-          <h4 className={styles['hero__title-small']}>Безопасно инвестируйте в&nbsp;ликвидную недвижемость с&nbsp;гаратнированным доходом</h4>
+          <h3 className={styles['hero__title--big']}>Квартиры - студии в&nbsp;историческом центре</h3>
+          <h4 className={styles['hero__title--small']}>Безопасно инвестируйте в&nbsp;ликвидную недвижемость с&nbsp;гаратнированным доходом</h4>
         </div>
         <ul ref={list} className={styles.hero__list}>
           <li className={styles['hero__list-item']}>доход от 12% годовых</li>

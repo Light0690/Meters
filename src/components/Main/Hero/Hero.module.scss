@@ -22,7 +22,7 @@
 
     @include max-mobile {
         padding: use-rem(80px 20px 20px);
-        gap: use-rem(100px);
+        gap: use-rem(200px);
     }
 
     &__container-img {
@@ -57,6 +57,11 @@
         justify-content: space-between;
         align-items: center;
         color: $white;
+
+        @include max-mobile {
+            flex-direction: column;
+            gap: use-rem(50px);
+        }
     }
 
     &__container-titles {
@@ -70,22 +75,25 @@
         }
     }
 
-    &__title-big {
-        width: 100%;
-        @include h3;
-    }
-
-    &__title-small {
-        width: 60%;
-        @include h5;
-
-        @include max-laptop {
-            width: 80%;
-        }
-
-        @include max-mobile {
+    &__title {
+        &--big {
             width: 100%;
+            @include h3;
         }
+
+        &--small {
+            width: 60%;
+            @include h5;
+    
+            @include max-laptop {
+                width: 80%;
+            }
+    
+            @include max-mobile {
+                width: 100%;
+            }
+        }
+        
     }
     
     &__list {
@@ -95,7 +103,8 @@
         gap: use-rem(40px);
 
         @include max-mobile {
-            display: none;
+            width: 100%;
+            gap: use-rem(10px);
         }
     }
 
@@ -103,6 +112,10 @@
         padding-bottom: use-rem(20px);
         border-bottom: use-rem(1px) solid $white;
         @include h6UP;
+
+        @include max-mobile {
+            padding-bottom: use-rem(10px);
+        }
     }
 
     &__btns {
