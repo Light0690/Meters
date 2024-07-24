@@ -79,6 +79,10 @@
         width: 60%;
         @include h5;
 
+        @include max-laptop {
+            width: 80%;
+        }
+
         @include max-mobile {
             width: 100%;
         }
