@@ -7,6 +7,7 @@
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@ui/*": ["src/components/UI/*"],
+      "@ux/*": ["src/components/UX/*"],
       "@pages/*": ["src/pages/*"],
       "@routes/*": ["src/routes/*"],
       "@utils/*": ["src/utils/*"],
