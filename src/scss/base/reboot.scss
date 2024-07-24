@@ -36,10 +36,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  
-}
-
 img,
 video {
   display: block;
@@ -130,6 +126,7 @@ button,
 [type="submit"] {
   appearance: none;
   cursor: pointer;
+  padding: 0;
 }
 
 ul,
