@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 
 import heroImg from '@assets/Header/logo.png';
@@ -11,7 +12,7 @@ interface props {
 const Header = ({ type = 'transparent' } : props) => {
   return (
     <header className={cn(styles.header, styles[type])}>
-      <div className={styles['header__container-logo']}>
+      <NavLink className={styles['header__container-logo']} to={'/'}>
         <div className={styles.header__logo}>
           <img className={styles['header__img']} src={heroImg} alt="logo" />
         </div>
@@ -19,13 +20,13 @@ const Header = ({ type = 'transparent' } : props) => {
           <div className={cn(styles.header__title, styles['header__title--big'])}>Метры</div>
           <div className={cn(styles.header__title, styles['header__title--small'])}>группа компаний</div>
         </div>
-      </div>
+      </NavLink>
       <ul className={styles.header__list}>
-        <li className={styles.header__elem}>Студии</li>
-        <li className={styles.header__elem}>Стать инвестором</li>
-        <li className={styles.header__elem}>О нас</li>
-        <li className={styles.header__elem}>Отзывы</li>
-        <li className={styles.header__elem}>Контакты</li>
+        <li><NavLink to={''} className={styles.header__elem}>Студии</NavLink></li>
+        <li><NavLink to={''} className={styles.header__elem}>Стать инвестором</NavLink></li>
+        <li><NavLink to={''} className={styles.header__elem}>О нас</NavLink></li>
+        <li><NavLink to={''} className={styles.header__elem}>Отзывы</NavLink></li>
+        <li><NavLink to={''} className={styles.header__elem}>Контакты</NavLink></li>
       </ul>
     </header>
   );
