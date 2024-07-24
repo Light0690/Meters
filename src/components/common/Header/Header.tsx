@@ -1,15 +1,20 @@
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 
+import UXMenu from '@src/components/UX/UXMenu';
+
 import heroImg from '@assets/Header/logo.png';
 
 import styles from './Header.module.scss';
+
 
 interface props {
   type?: 'transparent'
 }
 
 const Header = ({ type = 'transparent' } : props) => {
+  const list = ['Студии', 'Стать инвестором', 'О нас', 'Отзывы', 'Контакты'];
+  
   return (
     <header className={cn(styles.header, styles[type])}>
       <NavLink className={styles['header__container-logo']} to={'/'}>
@@ -21,13 +26,7 @@ const Header = ({ type = 'transparent' } : props) => {
           <div className={cn(styles.header__title, styles['header__title--small'])}>группа компаний</div>
         </div>
       </NavLink>
-      <ul className={styles.header__list}>
-        <li><NavLink to={''} className={styles.header__elem}>Студии</NavLink></li>
-        <li><NavLink to={''} className={styles.header__elem}>Стать инвестором</NavLink></li>
-        <li><NavLink to={''} className={styles.header__elem}>О нас</NavLink></li>
-        <li><NavLink to={''} className={styles.header__elem}>Отзывы</NavLink></li>
-        <li><NavLink to={''} className={styles.header__elem}>Контакты</NavLink></li>
-      </ul>
+      <UXMenu list={list}/>
     </header>
   );
 };
