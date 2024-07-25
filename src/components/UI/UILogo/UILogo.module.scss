@@ -26,15 +26,9 @@
           @include size(use-rem(100px));
         }
       }
-
-      &__container-icon {
-        @include size(100%);
-        overflow: hidden;
-      }
     
       &__icon {
         min-width: use-rem(200px);
-        @include size(100%);
     
         @include max-mobile {
           min-width: use-rem(100px);
@@ -74,13 +68,67 @@
       }
     }
   }
+
+  // &.medium {
+
+  // }
+
+  &.small {
+    gap: use-rem(10px);
+
+    .logo {
+      &__container {
+        @include size(use-rem(60px));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        @include max-laptop {
+          @include size(use-rem(50px));
+        }
+
+        @include max-tablet {
+          @include size(use-rem(40px));
+        }
+      }
+
+      &__title {
+        &--big {
+          @include h4;
+        }
+    
+        &--small {
+          @include body-small;
+          letter-spacing: use-rem(2.5px);
+
+          @include max-laptop {
+            letter-spacing: use-rem(1.5px);
+          }
+
+          @include max-mobile {
+            letter-spacing: use-rem(0.5px);
+          }
+        }
+      }
+    }
+  }
+
+  &__container-icon {
+    @include size(100%);
+    overflow: hidden;
+  }
   
   &__icon {
+    @include size(100%);
     object-fit: contain;
     object-position: center center;
   }
 
-  &__container-title {
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
     color: $white;
   }
 }
