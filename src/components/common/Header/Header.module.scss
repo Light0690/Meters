@@ -24,46 +24,4 @@
     left: 0;
     z-index: 1;
   }
-
-  &__container-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: use-rem(10px)
-  }
-
-  &__logo {
-    @include size(use-rem(60px));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @include max-laptop {
-      @include size(use-rem(40px));
-    }
-  }
-
-  &__img {
-    object-fit: contain;
-    object-position: center center;
-  }
-
-  &__titles {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-  }
-
-  &__title {
-    color: $white;
-
-    &--big {
-      @include body-medium-up;
-    }
-
-    &--small {
-      @include body-small;
-    }
-  }
 }

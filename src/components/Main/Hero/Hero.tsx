@@ -1,23 +1,27 @@
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
 
+import { useResize } from '@src/hooks/useResize';
+
 import UIButton from '@ui/UIButton';
 
 import heroImg from '@assets/Main/hero.jpg';
 
 import styles from './Hero.module.scss';
 
+
 const Hero = () => {
   const titles = useRef<null | HTMLDivElement>(null);
   const list = useRef<null | HTMLUListElement>(null);
   const buttons = useRef<null | HTMLDivElement>(null);
+  const { isScreenMd } = useResize();
   
   useEffect(() => {
     const tl = gsap.timeline({ delay: 1.8 });
     const animate = { x: -50, opacity: 0, duration: 2, ease: 'circ.out', stagger: 0.1 };
 
     if(titles.current)  tl.from(titles.current.children, animate, '0');
-    if(list.current)    tl.from(list.current.children, animate, '0');
+    if(list.current)    tl.from(list.current.children, animate, isScreenMd ? '0' : '<+=0.2');
     if(buttons.current) tl.from(buttons.current.children, animate, '0');
   },[])
   

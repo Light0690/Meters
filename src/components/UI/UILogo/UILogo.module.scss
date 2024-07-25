@@ -1,0 +1,135 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &.big {
+    width: 100%;
+    height: 100vh;
+    gap: use-rem(50px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: $section-bg-dark;
+
+    @include max-mobile {
+      gap: use-rem(20px);
+    }
+
+    .logo {
+      &__container {
+        @include size(use-rem(200px));
+    
+        @include max-mobile {
+          @include size(use-rem(100px));
+        }
+      }
+    
+      &__icon {
+        min-width: use-rem(200px);
+    
+        @include max-mobile {
+          min-width: use-rem(100px);
+        }
+      }
+
+      &__title {
+        &--big {
+          @include h1A;
+
+          @include max-tablet {
+            letter-spacing: use-rem(4px);
+          }
+
+          @include max-mobile {
+            letter-spacing: 0;
+          }
+        }
+    
+        &--small {
+          @include h4;
+          letter-spacing: use-rem(8px);
+
+          @include max-laptop {
+            letter-spacing: use-rem(4px);
+          }
+
+          @include max-tablet {
+            letter-spacing: use-rem(1px);
+          }
+    
+          @include max-mobile {
+            font-size: use-rem(18px);
+            letter-spacing: use-rem(3px);
+          }
+        }
+      }
+    }
+  }
+
+  // &.medium {
+
+  // }
+
+  &.small {
+    gap: use-rem(10px);
+
+    .logo {
+      &__container {
+        @include size(use-rem(60px));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        @include max-laptop {
+          @include size(use-rem(50px));
+        }
+
+        @include max-tablet {
+          @include size(use-rem(40px));
+        }
+      }
+
+      &__title {
+        &--big {
+          @include h4;
+        }
+    
+        &--small {
+          @include body-small;
+          letter-spacing: use-rem(2.5px);
+
+          @include max-laptop {
+            letter-spacing: use-rem(1.5px);
+          }
+
+          @include max-mobile {
+            letter-spacing: use-rem(0.5px);
+          }
+        }
+      }
+    }
+  }
+
+  &__container-icon {
+    @include size(100%);
+    overflow: hidden;
+  }
+  
+  &__icon {
+    @include size(100%);
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: $white;
+  }
+}
+  
