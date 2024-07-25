@@ -4,8 +4,7 @@ import { gsap } from 'gsap';
 import cn from 'classnames';
 
 import UXMenu from '@src/components/UX/UXMenu';
-
-import heroImg from '@assets/Header/logo.png';
+import UILogo from '@src/components/UI/UILogo';
 
 import styles from './Header.module.scss';
 
@@ -28,13 +27,7 @@ const Header = ({ type = 'transparent' } : props) => {
   return (
     <header ref={header} className={cn(styles.header, styles[type])}>
       <NavLink className={styles['header__container-logo']} to={'/'}>
-        <div className={styles.header__logo}>
-          <img className={styles['header__img']} src={heroImg} alt="logo" />
-        </div>
-        <div className={styles.header__titles}>
-          <div className={cn(styles.header__title, styles['header__title--big'])}>Метры</div>
-          <div className={cn(styles.header__title, styles['header__title--small'])}>группа компаний</div>
-        </div>
+        <UILogo size='small' animate={false}/>
       </NavLink>
       <UXMenu list={list}/>
     </header>
