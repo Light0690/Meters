@@ -11,11 +11,12 @@ import styles from './UILogo.module.scss';
 
 
 interface props {
-    size: 'small' | 'medium' | 'big',
-    animate: boolean
+    size?: 'small' | 'medium' | 'big',
+    bg?: 'transparent' | 'dark',
+    animate?: boolean
 }
 
-const UILogo = ({ size = 'medium', animate = false }: props) => {
+const UILogo = ({ size = 'medium', bg = 'transparent', animate = false }: props) => {
   const wrapper = useRef(null);
   const icon = useRef(null);
   const bigTitle = useRef(null);
@@ -39,7 +40,7 @@ const UILogo = ({ size = 'medium', animate = false }: props) => {
 
   
   return (
-    <div className={cn(styles.logo, styles[size])} ref={wrapper}>
+    <div className={cn(styles.logo, styles[size], styles[bg])} ref={wrapper}>
       <div className={styles.logo__container}>
         <div className={styles['logo__container-icon']} ref={icon}>
           <img className={styles.logo__icon} src={iconImg} alt='icon' />
