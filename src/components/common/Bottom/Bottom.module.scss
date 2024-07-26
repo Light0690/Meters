@@ -1,0 +1,144 @@
+.bottom {
+  padding: use-rem(100px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  background-color: $section-bg-dark;
+
+  @include max-laptop {
+    padding: use-rem(100px 50px);
+  }
+
+  @include max-tablet {
+    padding: use-rem(75px 25px);
+  }
+
+  @include max-mobile {
+    padding: use-rem(30px 15px);
+    flex-direction: column;
+    gap: use-rem(30px);
+  }
+
+  &__cities {
+    display: flex;
+    flex-direction: row;
+    gap: use-rem(50px);
+
+    @include max-laptop {
+      gap: use-rem(25px);
+    }
+
+    @include max-tablet {
+      gap: use-rem(15px);
+    }
+
+    @include max-mobile {
+      gap: use-rem(10px);
+    }
+  }
+
+  &__city {
+    width: use-rem(400px);
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    gap: use-rem(30px);
+
+    @include max-laptop {
+      width: use-rem(350px);
+      gap: use-rem(20px);
+    }
+
+    @include max-tablet {
+      width: use-rem(250px);
+      gap: use-rem(20px);
+    }
+
+    @include max-mobile {
+      width: use-rem(170px);
+      gap: use-rem(10px);
+    }
+  }
+
+  &__place { 
+    @include body-medium;
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: row;
+    gap: use-rem(15px);
+
+    @include max-tablet {
+      gap: use-rem(10px);
+    }
+  }
+
+  &__address-icon {
+    @include size(use-rem(40px));
+    object-fit: contain;
+    object-position: center center;
+
+    @include max-tablet {
+      @include size(use-rem(30px));
+    }
+
+    @include max-mobile {
+      @include size(use-rem(20px));
+    }
+  }
+
+  &__address-text {
+    @include body-small;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    gap: use-rem(10px);
+  }
+
+  &__social {
+    padding: use-rem(6px);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include size(use-rem(36px));
+    background-color: $white;
+
+    @include max-tablet {
+      @include size(use-rem(30px));
+    }
+
+    @include max-mobile {
+      padding: use-rem(5px);
+      @include size(use-rem(25px));
+    }
+  }
+
+  &__icon {
+    @include size(100%);
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: use-rem(30px);
+
+    @include max-laptop {
+      gap: use-rem(20px);
+    }
+
+    @include max-tablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    @include h6;
+  }
+}
