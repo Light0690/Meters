@@ -2,14 +2,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
+  position: relative;
+
+  &__content, &__list {
+    padding: use-rem(100px);
+    width: 50%;
+  }
 
   &__content {
-    padding: use-rem(100px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
+    padding-bottom: use-rem(600px);
     background-color: $section-bg-dark;
   }
 
@@ -35,13 +37,68 @@
     @include body-small;
   }
 
-  &__presentation {}
-  &__img-container {}
-  &__img {}
-  &__button {}
+  &__presentation {
+    border-top-right-radius: use-rem(30px);
+    border-bottom-right-radius: use-rem(30px);
+    padding-right: use-rem(30px);
+    width: use-rem(975px);
+    height: use-rem(150px);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: absolute;
+    left: use-rem(-200px);
+    bottom: use-rem(100px);
+    top: auto;
+    background: linear-gradient(90deg, rgba(255,151,5,1) 0%, rgba(255,128,0,1) 50%, rgba(255,98,0,1) 100%);
+  }
 
-  &__list {}
-  &__li {}
-  &__li-title {}
-  &__li-text {}
+  &__img-container {
+    width: use-rem(450px);
+    height: use-rem(400px);
+    position: absolute;
+    top: use-rem(-250px);
+    left: use-rem(195px);
+    overflow: hidden;
+  }
+
+  &__img {
+    width: use-rem(450px);
+    height: use-rem(400px);
+    position: absolute;
+    top: use-rem(110px);
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  &__button {
+    border-radius: use-rem(30px);
+    border: none;
+    padding: use-rem(15px);
+    @include body-small;
+    color: $black;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: use-rem(50px);
+  }
+
+  &__li {
+    width: 100%;
+    padding: use-rem(20px 0px);
+    border-bottom: use-rem(1px) solid $black;
+    color: $black;
+  }
+
+  &__li-title {
+    @include h3;
+  }
+
+  &__li-text {
+    @include body-small;
+  }
 }
