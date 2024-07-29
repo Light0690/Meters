@@ -1,0 +1,47 @@
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__content {
+    padding: use-rem(100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    background-color: $section-bg-dark;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: use-rem(50px);
+    color: $white
+  }
+
+  &__title {
+    @include h3;
+  }
+
+  &__texts {
+    width: use-rem(500px);
+    display: flex;
+    flex-direction: column;
+    gap: use-rem(30px)
+  }
+
+  &__text {
+    @include body-small;
+  }
+
+  &__presentation {}
+  &__img-container {}
+  &__img {}
+  &__button {}
+
+  &__list {}
+  &__li {}
+  &__li-title {}
+  &__li-text {}
+}
