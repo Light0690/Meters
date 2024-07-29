@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import splitTypeHelper from '@src/utils/splitTypeHelper';
 import { ScrollLock } from '@src/utils/scrollLock';
 
-import iconImg from '@assets/Main/icon.png';
+import iconImg from '@assets/common/icon.png';
 
 import styles from './UILogo.module.scss';
 
