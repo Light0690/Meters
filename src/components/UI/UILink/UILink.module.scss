@@ -1,0 +1,23 @@
+.link {
+    color: $white;
+    position: relative;
+    @include h6;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 0%;
+        height: use-rem(1px);
+        background-color: $white;
+        position: absolute;
+        top: auto;
+        bottom: use-rem(-5px);
+        transition: width 0.5s;
+    }
+    
+    @include hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}
