@@ -1,22 +1,26 @@
 .wrapper {
   &__button {
+    @include h5UP;
+    border: use-rem(1px) solid $white;
+    padding: use-rem(40px 100px);
+    min-width: use-rem(350px);
+    color: $white;
+    transition: all 0.5s;
+
     @include max-laptop {
       padding: use-rem(30px 90px); 
+      min-width: use-rem(300px);
     }
 
     @include max-tablet {
-      padding: use-rem(20px 80px); 
+      padding: use-rem(25px 80px); 
+      min-width: use-rem(260px);
     }
 
     @include max-mobile {
-      padding: use-rem(15px 40px); 
+      padding: use-rem(20px 40px); 
+      min-width: use-rem(100px);
     }
-
-    @include h5;
-    border: use-rem(1px) solid $white;
-    padding: use-rem(40px 100px);
-    color: $white;
-    transition: all 0.5s;
   }   
 
   .transparent {

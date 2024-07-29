@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 
@@ -6,6 +5,7 @@ import { useResize } from '@src/hooks/useResize';
 import { ScrollLock } from '@src/utils/scrollLock';
 
 import styles from './UXMenu.module.scss';
+import UILink from '@src/components/UI/UILink';
 
 interface props {
     list: string[]
@@ -39,9 +39,9 @@ const UXMenu = ({ list }: props) => {
       <div className={cn(styles.menu__window, isActive ? styles['menu__window--active'] : '')}>
         <ul className={cn(styles.menu__list, isActive ? styles['menu__list--active'] : '')}>
           {list.map((el, id) => {
-              return (
-                  <li key={id}><NavLink to={''} className={styles.menu__elem}>{el}</NavLink></li>
-              )
+            return (
+              <li key={id}><UILink src='' text={el}/></li>
+            )
           })}
         </ul>
       </div>

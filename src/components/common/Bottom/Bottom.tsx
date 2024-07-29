@@ -10,6 +10,7 @@ import ytIcon from '@assets/common/ytIcon.svg';
 import yzIcon from '@assets/common/yzIcon.svg';
 
 import styles from './Bottom.module.scss';
+import UILink from '@src/components/UI/UILink';
 
 const Bottom = () => {
   const cities = [
@@ -111,11 +112,11 @@ const Bottom = () => {
           </div>)
         })}
       </div>
-      <div className={styles.bottom__links}>
+      <ul className={styles.bottom__links}>
         {links.map((link,id) => {
-          return <NavLink to={link.src} key={id} className={styles.bottom__link}>{link.text}</NavLink>
+          return <li key={id}><UILink src={link.src} text={link.text}/></li>
         })}
-      </div>
+      </ul>
     </div>
   );
 };

@@ -208,21 +208,24 @@
 
 @mixin h5UP {
   @include max-laptop {
-    font-size: use-rem(26px);
+    font-size: use-rem(28px);
     letter-spacing: 0;
   }
 
   @include max-tablet {
-    font-size: use-rem(16px);
+    font-size: use-rem(22px);
+  }
+
+  @include max-mobile {
+    font-size: use-rem(18px);
   }
 
   font-family: $font-family--second;
   font-size: use-rem(32px);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 100%;
   letter-spacing: use-rem(0.96px);
-  text-transform: uppercase;
 }
 
 @mixin h5 {
