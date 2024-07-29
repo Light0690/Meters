@@ -121,5 +121,9 @@
         flex-direction: row;
         justify-content: center;
         gap: use-rem(50px);
+
+        @include max-mobile {
+            gap: use-rem(30px);
+        }
     }
 }
