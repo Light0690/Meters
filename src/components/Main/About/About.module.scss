@@ -1,0 +1,226 @@
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+
+  &__content, &__list {
+    @include padding;
+    width: 50%;
+  }
+
+  &__content {
+    padding-bottom: use-rem(520px);
+    background-color: $bg-dark;
+
+    @include max-laptop {
+      padding-bottom: use-rem(430px);
+    }
+
+    @include max-tablet {
+      width: 70%;
+      padding-bottom: use-rem(250px);
+    }
+
+    @include max-mobile {
+      padding-bottom: use-rem(90px);
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: use-rem(50px);
+    color: $white;
+
+    @include max-tablet {
+      gap: use-rem(30px);
+    }
+
+    @include max-mobile {
+      gap: use-rem(20px);
+    }
+  }
+
+  &__title {
+    @include h3;
+  }
+
+  &__texts {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: use-rem(30px);
+
+    @include max-laptop {
+      width: 80%;
+    }
+
+    @include max-tablet {
+      width: 90%;
+      gap: use-rem(20px);
+    }
+
+    @include max-mobile {
+      width: 100%;
+      gap: use-rem(10px);
+    }
+  }
+
+  &__text {
+    @include body-small;
+  }
+
+  &__presentation {
+    border-top-right-radius: use-rem(30px);
+    border-bottom-right-radius: use-rem(30px);
+    padding-right: use-rem(30px);
+    width: use-rem(975px);
+    height: use-rem(125px);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: absolute;
+    left: use-rem(-200px);
+    bottom: use-rem(100px);
+    top: auto;
+    background: $gradient-bg;
+
+    @include max-laptop { 
+      padding-right: use-rem(20px);
+      width: use-rem(850px);
+      height: use-rem(100px);
+      left: use-rem(-220px);
+      bottom: use-rem(60px);
+    }
+
+    @include max-tablet { 
+      padding-right: use-rem(15px);
+      width: use-rem(850px);
+      height: use-rem(80px);
+      left: use-rem(-430px);
+      bottom: use-rem(40px);
+    }
+
+    @include max-mobile { 
+      padding-right: use-rem(10px);
+      width: use-rem(250px);
+      height: use-rem(50px);
+      left: use-rem(-40px);
+      bottom: use-rem(20px);
+    }
+  }
+
+  &__img-container, &__img {
+    width: use-rem(450px);
+    height: use-rem(400px);
+
+    @include max-laptop {
+      width: use-rem(400px);
+    }
+
+    @include max-tablet {
+      width: use-rem(250px);
+      height: use-rem(200px);
+    }
+
+    @include max-mobile {
+      width: use-rem(200px);
+      height: use-rem(150px);
+    }
+  }
+
+  &__img-container {
+    position: absolute;
+    top: use-rem(-275px);
+    left: use-rem(195px);
+    overflow: hidden;
+
+    @include max-laptop {
+      top: use-rem(-300px);
+      left: use-rem(220px);
+    }
+
+    @include max-tablet {
+      top: use-rem(-120px);
+      left: use-rem(400px);
+    }
+
+    @include max-mobile {
+      display: none;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: use-rem(110px);
+    
+    @include max-tablet {
+      top: use-rem(50px);
+    }
+
+    img {
+      @include size(100%);
+      object-fit: contain;
+      object-position: center center;
+      @include rotateImg(aboutIcon, 5deg);
+    }
+  }
+
+  &__button {
+    border-radius: use-rem(30px);
+    border: none;
+    padding: use-rem(15px);
+    @include body-small;
+    color: $black;
+    transition: box-shadow 0.5s;
+
+    @include hover {
+      box-shadow: use-rem(1px 1px 30px 1px) rgba(49, 30, 1, 0.5);
+    }
+
+    @include max-mobile {
+      padding: use-rem(10px);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: use-rem(50px);
+
+    @include max-tablet {
+      gap: use-rem(30px);
+    }
+
+    @include max-mobile {
+      gap: use-rem(20px);
+    }
+  }
+
+  &__li {
+    width: 100%;
+    padding: use-rem(20px 0px);
+    border-bottom: use-rem(1px) solid $black;
+    color: $black;
+
+    @include max-tablet {
+      padding: use-rem(10px 0px);
+    }
+
+    @include max-mobile {
+      padding: use-rem(5px 0px);
+    }
+  }
+
+  &__li-title {
+    @include h3;
+  }
+
+  &__li-text {
+    @include body-small;
+  }
+}

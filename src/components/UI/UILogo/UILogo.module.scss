@@ -5,7 +5,7 @@
   overflow: hidden;
 
   &.dark {
-    background-color: $section-bg-dark;
+    background-color: $bg-dark;
   }
 
   &.big {
@@ -43,7 +43,7 @@
           @include h1A;
 
           @include max-tablet {
-            letter-spacing: use-rem(4px);
+            letter-spacing: use-rem(2px);
           }
 
           @include max-mobile {
@@ -53,10 +53,10 @@
     
         &--small {
           @include h4;
-          letter-spacing: use-rem(8px);
+          letter-spacing: use-rem(10px);
 
           @include max-laptop {
-            letter-spacing: use-rem(4px);
+            letter-spacing: use-rem(5px);
           }
 
           @include max-tablet {
@@ -65,7 +65,7 @@
     
           @include max-mobile {
             font-size: use-rem(18px);
-            letter-spacing: use-rem(3px);
+            letter-spacing: use-rem(4px);
           }
         }
       }
@@ -138,14 +138,14 @@
     
         &--small {
           @include body-small;
-          letter-spacing: use-rem(2.5px);
+          letter-spacing: use-rem(1.5px);
 
           @include max-laptop {
-            letter-spacing: use-rem(1.5px);
+            letter-spacing: use-rem(0.8px);
           }
 
           @include max-mobile {
-            letter-spacing: use-rem(0.5px);
+            letter-spacing: use-rem(0px);
           }
         }
       }

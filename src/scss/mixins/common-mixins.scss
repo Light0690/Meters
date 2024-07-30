@@ -64,6 +64,23 @@
   height: $height;
 }
 
+@mixin padding() {
+  padding: use-rem(100px);
+
+  @include max-laptop {
+    padding: use-rem(60px);
+  }
+  
+  @include max-tablet {
+    padding: use-rem(40px);
+  }
+
+  @include max-mobile {
+    padding: use-rem(20px);
+  }
+
+}
+
 
 @mixin scrollBars() {
   &::-webkit-scrollbar {

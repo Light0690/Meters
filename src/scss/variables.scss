@@ -17,35 +17,19 @@ $black60: #737373;
 $black50: #656565;
 $black25: #b6b6b6;
 $black10: #b6b6b6;
-$text-tertiary: $white;
 $text-secondary: #484848;
-$gradientBg: linear-gradient(180deg, #edeaea 0%, #fcfcfc 50%, #fff 100%);
+$gradient-bg: linear-gradient(90deg, rgba(255,151,5,1) 0%, rgba(255,128,0,1) 50%, rgba(255,98,0,1) 100%);
 
-$surface-primary: #f4f4f4;
-$slide-item-bg: $surface-primary;
-$slider-dot-default: #a1a1a1;
-
-$surface-divider: #cccccc;
-$link: $violet;
-$link-hover: #503267;
-
-$section-bg-dark: #262626;
-$section-bg-dark-second: #191919;
+$bg-dark: #262626;
 
 // Базовая типографика
-$font-family: 'Lighthaus';
+$font-family: 'Lato', sans-serif;
 $font-family--second: 'Manrope', 'sans-serif';
-$font-family--italic: 'Source Serif Pro', 'sans-serif';
-$font-family--quote: $font-family--italic;
 
 // Брейкпоинты для адаптации
 $max-laptop: 1720px;
 $max-tablet: 1023px;
 $max-mobile: 767px;
-
-// Разное
-$transition-time: 0.3s;
-$imgScale: 1.1;
 
 // transition-timing-func
 $main-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
