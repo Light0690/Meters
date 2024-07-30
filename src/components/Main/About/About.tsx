@@ -52,21 +52,22 @@ const About = () => {
   }
 
   useEffect(() => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: parentRef.current,
-        start: `-20% 60%`,
-        end: `60% 60%`,
-        scrub: 1,
-        markers: true
-      },
-    });
-
-    if(titleRef.current) splitTypeHelper(titleRef.current, tl)
-    if(textsRef.current) tl.from(textsRef.current.children, { x: -50, opacity: 0, duration: 1, ease: 'circ.out', stagger: 0.2 }, '<+=0.5')
-    if(presentationRef.current) tl.from(presentationRef.current, { xPercent: -10, opacity: 0, duration: 1, ease: 'circ.out' }, '<+=50%')
-    if(iconRef.current) tl.from(iconRef.current, { yPercent: 30, opacity: 0, duration: 1, ease: 'circ.out' }, '<+=50%')
-    if(listRef.current) tl.from(listRef.current.children, { x: -50, opacity: 0, duration: 1, ease: 'circ.out', stagger: 0.5 }, '0')
+    if(parentRef) {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: parentRef.current,
+          start: `-20% 60%`,
+          end: `70% 60%`,
+          scrub: 1
+        },
+      });
+  
+      if(titleRef.current) splitTypeHelper(titleRef.current, tl)
+      if(textsRef.current) tl.from(textsRef.current.children, { x: -50, opacity: 0, duration: 1, ease: 'circ.out', stagger: 0.2 }, '<+=0.5')
+      if(presentationRef.current) tl.from(presentationRef.current, { xPercent: -10, opacity: 0, duration: 1, ease: 'circ.out' })
+      if(iconRef.current) tl.from(iconRef.current, { yPercent: 30, opacity: 0, duration: 1, ease: 'circ.out' }, '<+=50%')
+      if(listRef.current) tl.from(listRef.current.children, { x: -50, opacity: 0, duration: 1, ease: 'circ.out', stagger: 0.5 }, '0')
+    }
   },[])
   
   return (
