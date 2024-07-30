@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
-  background-color: $section-bg-dark;
+  background-color: $bg-dark;
 
   @include max-laptop {
     padding: use-rem(100px 50px);

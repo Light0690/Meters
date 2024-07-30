@@ -12,7 +12,7 @@
 
   &__content {
     padding-bottom: use-rem(600px);
-    background-color: $section-bg-dark;
+    background-color: $bg-dark;
   }
 
   &__container {
@@ -50,7 +50,7 @@
     left: use-rem(-200px);
     bottom: use-rem(100px);
     top: auto;
-    background: linear-gradient(90deg, rgba(255,151,5,1) 0%, rgba(255,128,0,1) 50%, rgba(255,98,0,1) 100%);
+    background: $gradient-bg;
   }
 
   &__img-container {
