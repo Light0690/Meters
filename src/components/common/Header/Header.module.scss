@@ -1,5 +1,7 @@
 .header {
-  padding: use-rem(50px 200px);
+  @include padding;
+  padding-top: use-rem(50px);
+  padding-bottom: use-rem(50px);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -7,15 +9,13 @@
   justify-content: space-between;
 
   @include max-laptop {
-    padding: use-rem(25px 100px);
+    padding-top: use-rem(25px);
+    padding-bottom: use-rem(25px);
   }
 
   @include max-tablet {
-    padding: use-rem(30px 40px);
-  }
-
-  @include max-mobile {
-    padding: use-rem(20px);
+    padding-top: use-rem(30px);
+    padding-bottom: use-rem(30px);
   }
 
   &.transparent {

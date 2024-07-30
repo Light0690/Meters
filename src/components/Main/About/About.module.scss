@@ -6,7 +6,7 @@
   position: relative;
 
   &__content, &__list {
-    padding: use-rem(100px);
+    @include padding;
     width: 50%;
   }
 
@@ -51,20 +51,34 @@
     bottom: use-rem(100px);
     top: auto;
     background: $gradient-bg;
+
+    @include max-laptop { 
+      width: use-rem(900px);
+      left: use-rem(-220px);
+    }
+  }
+
+  &__img-container, &__img {
+    width: use-rem(450px);
+    height: use-rem(400px);
+
+    @include max-laptop {
+      width: use-rem(400px);
+    }
   }
 
   &__img-container {
-    width: use-rem(450px);
-    height: use-rem(400px);
     position: absolute;
     top: use-rem(-250px);
     left: use-rem(195px);
     overflow: hidden;
+
+    @include max-laptop {
+      left: use-rem(220px);
+    }
   }
 
   &__img {
-    width: use-rem(450px);
-    height: use-rem(400px);
     position: absolute;
     top: use-rem(110px);
     object-fit: contain;
