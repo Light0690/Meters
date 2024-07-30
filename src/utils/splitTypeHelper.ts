@@ -37,7 +37,7 @@ const positionDefault = (index: number): string => (index === 0 ? '0' : '<+=25%'
  * @param { position? } function - position для анимации
  * @returns { undefined }
  */
-const splitTypeHelper = (target: HTMLElement, tl: gsap.core.Timeline, { options = optionsDefault, position = positionDefault }): undefined => {
+const splitTypeHelper = (target: HTMLElement, tl: gsap.core.Timeline, { options = optionsDefault, position = positionDefault } = {}): undefined => {
   if (!target) return;
 
   const splitedTitle = new SplitType(getNonDividingSpace(target), { types: ['lines', 'words'] });
