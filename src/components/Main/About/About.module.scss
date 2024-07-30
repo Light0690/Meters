@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: start;
+  align-items: stretch;
   position: relative;
 
   &__content, &__list {
@@ -11,15 +11,36 @@
   }
 
   &__content {
-    padding-bottom: use-rem(600px);
+    padding-bottom: use-rem(520px);
     background-color: $bg-dark;
+
+    @include max-laptop {
+      padding-bottom: use-rem(430px);
+    }
+
+    @include max-tablet {
+      width: 70%;
+      padding-bottom: use-rem(250px);
+    }
+
+    @include max-mobile {
+      padding-bottom: use-rem(90px);
+    }
   }
 
   &__container {
     display: flex;
     flex-direction: column;
     gap: use-rem(50px);
-    color: $white
+    color: $white;
+
+    @include max-tablet {
+      gap: use-rem(30px);
+    }
+
+    @include max-mobile {
+      gap: use-rem(20px);
+    }
   }
 
   &__title {
@@ -27,10 +48,24 @@
   }
 
   &__texts {
-    width: use-rem(500px);
+    width: 70%;
     display: flex;
     flex-direction: column;
-    gap: use-rem(30px)
+    gap: use-rem(30px);
+
+    @include max-laptop {
+      width: 80%;
+    }
+
+    @include max-tablet {
+      width: 90%;
+      gap: use-rem(20px);
+    }
+
+    @include max-mobile {
+      width: 100%;
+      gap: use-rem(10px);
+    }
   }
 
   &__text {
@@ -42,7 +77,7 @@
     border-bottom-right-radius: use-rem(30px);
     padding-right: use-rem(30px);
     width: use-rem(975px);
-    height: use-rem(150px);
+    height: use-rem(125px);
     display: flex;
     justify-content: end;
     align-items: center;
@@ -55,6 +90,23 @@
     @include max-laptop { 
       width: use-rem(900px);
       left: use-rem(-220px);
+      bottom: use-rem(60px);
+    }
+
+    @include max-tablet { 
+      padding-right: use-rem(20px);
+      width: use-rem(850px);
+      height: use-rem(100px);
+      left: use-rem(-430px);
+      bottom: use-rem(40px);
+    }
+
+    @include max-mobile { 
+      padding-right: use-rem(10px);
+      width: use-rem(250px);
+      height: use-rem(50px);
+      left: use-rem(-40px);
+      bottom: use-rem(20px);
     }
   }
 
@@ -65,16 +117,35 @@
     @include max-laptop {
       width: use-rem(400px);
     }
+
+    @include max-tablet {
+      width: use-rem(250px);
+      height: use-rem(200px);
+    }
+
+    @include max-mobile {
+      width: use-rem(200px);
+      height: use-rem(150px);
+    }
   }
 
   &__img-container {
     position: absolute;
-    top: use-rem(-250px);
+    top: use-rem(-275px);
     left: use-rem(195px);
     overflow: hidden;
 
     @include max-laptop {
       left: use-rem(220px);
+    }
+
+    @include max-tablet {
+      top: use-rem(-100px);
+      left: use-rem(400px);
+    }
+
+    @include max-mobile {
+      display: none;
     }
   }
 
@@ -83,6 +154,10 @@
     top: use-rem(110px);
     object-fit: contain;
     object-position: center center;
+
+    @include max-tablet {
+      top: use-rem(50px);
+    }
   }
 
   &__button {
@@ -91,6 +166,10 @@
     padding: use-rem(15px);
     @include body-small;
     color: $black;
+
+    @include max-mobile {
+      padding: use-rem(10px);
+    }
   }
 
   &__list {
@@ -99,6 +178,14 @@
     justify-content: start;
     align-items: start;
     gap: use-rem(50px);
+
+    @include max-tablet {
+      gap: use-rem(30px);
+    }
+
+    @include max-mobile {
+      gap: use-rem(20px);
+    }
   }
 
   &__li {
@@ -106,6 +193,14 @@
     padding: use-rem(20px 0px);
     border-bottom: use-rem(1px) solid $black;
     color: $black;
+
+    @include max-tablet {
+      padding: use-rem(10px 0px);
+    }
+
+    @include max-mobile {
+      padding: use-rem(5px 0px);
+    }
   }
 
   &__li-title {
