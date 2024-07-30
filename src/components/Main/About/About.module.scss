@@ -88,15 +88,17 @@
     background: $gradient-bg;
 
     @include max-laptop { 
-      width: use-rem(900px);
+      padding-right: use-rem(20px);
+      width: use-rem(850px);
+      height: use-rem(100px);
       left: use-rem(-220px);
       bottom: use-rem(60px);
     }
 
     @include max-tablet { 
-      padding-right: use-rem(20px);
+      padding-right: use-rem(15px);
       width: use-rem(850px);
-      height: use-rem(100px);
+      height: use-rem(80px);
       left: use-rem(-430px);
       bottom: use-rem(40px);
     }
@@ -136,11 +138,12 @@
     overflow: hidden;
 
     @include max-laptop {
+      top: use-rem(-300px);
       left: use-rem(220px);
     }
 
     @include max-tablet {
-      top: use-rem(-100px);
+      top: use-rem(-120px);
       left: use-rem(400px);
     }
 
@@ -154,6 +157,7 @@
     top: use-rem(110px);
     object-fit: contain;
     object-position: center center;
+    @include rotateImg(aboutIcon, 5deg);
 
     @include max-tablet {
       top: use-rem(50px);
