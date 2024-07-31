@@ -1,21 +1,17 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-import splitTypeHelper from '@src/utils/splitTypeHelper';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
 
 import aboutIcon from '@assets/Main/about.png';
 
+import animate from './animate';
 import styles from './About.module.scss';
 
-
 const About = () => {
-  gsap.registerPlugin(ScrollTrigger);
-  let parentRef = useRef(null);
+  let parentRef = useRef<null | HTMLDivElement>(null);
   let titleRef = useRef<null | HTMLHeadingElement>(null);
   let textsRef = useRef<null | HTMLDivElement>(null);
-  let presentationRef = useRef(null);
-  let iconRef = useRef(null);
+  let presentationRef = useRef<null | HTMLDivElement>(null);
+  let iconRef = useRef<null | HTMLDivElement>(null);
   let listRef = useRef<null | HTMLUListElement>(null);
 
   const about = {
@@ -49,25 +45,17 @@ const About = () => {
         text: 'на рынке недвижимости '
       },
     ]
-  }
+  };
 
-  useEffect(() => {
-    if(parentRef) {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: parentRef.current,
-          start: `-20% 60%`,
-          end: `70% 60%`,
-          scrub: 1
-        },
-      });
-  
-      if(titleRef.current) splitTypeHelper(titleRef.current, tl)
-      if(textsRef.current) tl.from(textsRef.current.children, { x: -50, opacity: 0, duration: 1, ease: 'circ.out', stagger: 0.2 }, '<+=0.5')
-      if(presentationRef.current) tl.from(presentationRef.current, { xPercent: -10, opacity: 0, duration: 1, ease: 'circ.out' })
-      if(iconRef.current) tl.from(iconRef.current, { yPercent: 30, opacity: 0, duration: 1, ease: 'circ.out' }, '<+=50%')
-      if(listRef.current) tl.from(listRef.current.children, { x: -50, opacity: 0, duration: 1, ease: 'circ.out', stagger: 0.5 }, '0')
-    }
+  useGSAP(() => {
+    animate({
+      parent: parentRef.current,
+      title: titleRef.current, 
+      texts: textsRef?.current?.children, 
+      presentation: presentationRef.current, 
+      icon: iconRef.current, 
+      list: listRef?.current?.children
+    });
   },[])
   
   return (
