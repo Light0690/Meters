@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 
-import { useResize } from '@src/hooks/useResize';
-import { ScrollLock } from '@src/utils/scrollLock';
+import { useResize } from '@hooks/useResize';
+import { ScrollLock } from '@utils/scrollLock';
+
+import UILink from '@components/UI/UILink';
 
 import styles from './UXMenu.module.scss';
-import UILink from '@src/components/UI/UILink';
 
 interface props {
-    list: string[]
+  list: string[]
 }
 
 const UXMenu = ({ list }: props) => {
@@ -19,20 +20,13 @@ const UXMenu = ({ list }: props) => {
   const changeActive = () => setIsActive(prev => !prev);
 
   useEffect(() => {
-    if(isScreenLg) {
-      setIsActive(false);
-    }
+    if(isScreenLg) setIsActive(false);
   },[isScreenLg]);
 
   useEffect(() => {
-    if(isActive) {
-      scrollLock.disableScrolling();
-    } else {
-      scrollLock.enableScrolling();
-    }
+    if(isActive) scrollLock.disableScrolling();
+    else         scrollLock.enableScrolling();
   },[isActive]);
-
-  
 
   return (
     <div className={styles.menu}>
