@@ -1,22 +1,22 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useGSAP } from '@gsap/react';
 import cn from 'classnames';
-import { gsap } from 'gsap';
 
-import splitTypeHelper from '@utils/splitTypeHelper';
 import { ScrollLock } from '@utils/scrollLock';
 
 import iconImg from '@assets/common/icon.png';
 
+import animate from './animate';
 import styles from './UILogo.module.scss';
 
-
 interface props {
-    size?: 'small' | 'medium' | 'big',
-    bg?: 'transparent' | 'dark',
-    animate?: boolean
+  size?: 'small' | 'medium' | 'big',
+  bg?: 'transparent' | 'dark',
+  isAnimate?: boolean
 }
 
-const UILogo = ({ size = 'medium', bg = 'transparent', animate = false }: props) => {
+const UILogo = ({ size = 'medium', bg = 'transparent', isAnimate = false }: props) => {
+  const [isDisable, setIsDisable] = useState<boolean>(isAnimate);
   const wrapper = useRef(null);
   const icon = useRef(null);
   const bigTitle = useRef(null);
@@ -24,20 +24,24 @@ const UILogo = ({ size = 'medium', bg = 'transparent', animate = false }: props)
   const scrollLock = new ScrollLock();
 
   useEffect(() => {
-    if(animate) {
-      scrollLock.disableScrolling();
-
-      const tl = gsap.timeline({});
-  
-      tl.from(icon.current, { width: 0, duration: 1.5, ease: 'circ.out' });
-  
-      if(bigTitle.current) splitTypeHelper(bigTitle.current, tl, { options: { yPercent: 100, ease: 'circ.out', duration: 1.5 }});
-      if(smallTitle.current) splitTypeHelper(smallTitle.current, tl, { position: () => '<+=40%' });
-
-      tl.to(wrapper.current, { opacity: 0, zIndex: -1, duration: 0.5, onComplete: () => scrollLock.enableScrolling()})
+    if(isAnimate) {
+      if(isDisable) scrollLock.disableScrolling();
+      else          scrollLock.enableScrolling();
     }
-  });
+  },[isDisable])
 
+  useGSAP(() => {
+    if(isAnimate) {
+      animate({
+        icon: icon.current,
+        bigTitle: bigTitle.current,
+        smallTitle: smallTitle.current,
+        wrapper: wrapper.current,
+        startFunc: () => setIsDisable(true),
+        cb: () => setIsDisable(false)
+      });
+    }
+  },[]);
   
   return (
     <div className={cn(styles.logo, styles[size], styles[bg])} ref={wrapper}>
