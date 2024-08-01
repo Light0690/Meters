@@ -7,12 +7,12 @@ import animate from './animate';
 import styles from './About.module.scss';
 
 const About = () => {
-  let parentRef = useRef<null | HTMLDivElement>(null);
-  let titleRef = useRef<null | HTMLHeadingElement>(null);
-  let textsRef = useRef<null | HTMLDivElement>(null);
+  let parentRef =       useRef<null | HTMLDivElement>(null);
+  let titleRef  =       useRef<null | HTMLHeadingElement>(null);
+  let textsRef  =       useRef<null | HTMLDivElement>(null);
   let presentationRef = useRef<null | HTMLDivElement>(null);
-  let iconRef = useRef<null | HTMLDivElement>(null);
-  let listRef = useRef<null | HTMLUListElement>(null);
+  let iconRef   =       useRef<null | HTMLDivElement>(null);
+  let listRef   =       useRef<null | HTMLUListElement>(null);
 
   const about = {
     title: 'МЕТРЫ В ЦИФРАХ',
