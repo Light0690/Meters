@@ -3,8 +3,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import cn from 'classnames';
 
-import UXMenu from '@src/components/UX/UXMenu';
-import UILogo from '@src/components/UI/UILogo';
+import UXMenu from '@components/UX/UXMenu';
+import UILogo from '@components/UI/UILogo';
 
 import styles from './Header.module.scss';
 

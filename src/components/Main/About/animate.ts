@@ -4,6 +4,8 @@ import { matchMediaCreator } from '@utils/matchMediaCreator';
 import splitTypeHelper from '@utils/splitTypeHelper';
 import useRem from '@utils/useRem';
 
+import { useResize } from '@hooks/useResize';
+
 interface props {
   parent: null | HTMLDivElement,
   title: null | HTMLHeadingElement, 
@@ -14,6 +16,8 @@ interface props {
 }
 
 const animate = ({ parent, title, texts, presentation, icon, list }: props) => {
+  const { device } = useResize();
+
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: parent,

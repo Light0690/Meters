@@ -15,6 +15,8 @@ const Hero = () => {
   const list = useRef<null | HTMLUListElement>(null);
   const buttons = useRef<null | HTMLDivElement>(null);
   const { isScreenMd } = useResize();
+
+  console.log(useResize())
   
   useEffect(() => {
     const tl = gsap.timeline({ delay: 1.8 });

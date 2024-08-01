@@ -10,6 +10,7 @@
       "@ux/*": ["src/components/UX/*"],
       "@pages/*": ["src/pages/*"],
       "@routes/*": ["src/routes/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
     },
     "target": "ES2020",

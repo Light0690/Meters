@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 import cn from 'classnames';
 import { gsap } from 'gsap';
 
-import splitTypeHelper from '@src/utils/splitTypeHelper';
-import { ScrollLock } from '@src/utils/scrollLock';
+import splitTypeHelper from '@utils/splitTypeHelper';
+import { ScrollLock } from '@utils/scrollLock';
 
 import iconImg from '@assets/common/icon.png';
 
