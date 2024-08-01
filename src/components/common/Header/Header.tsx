@@ -27,7 +27,7 @@ const Header = ({ type = 'transparent' } : props) => {
   return (
     <header ref={header} className={cn(styles.header, styles[type])}>
       <NavLink className={styles['header__container-logo']} to={'/'}>
-        <UILogo size='small' animate={false}/>
+        <UILogo size='small'/>
       </NavLink>
       <UXMenu list={list}/>
     </header>

@@ -7,7 +7,7 @@ import styles from './Main.module.scss';
 const Main = () => {
   return (
     <div className={styles.main}>
-      {/* <UILogo size='big' bg='dark' animate={true}/> */}
+      <UILogo size='big' bg='dark' isAnimate={true}/>
       <Hero />
       <About />
     </div>
