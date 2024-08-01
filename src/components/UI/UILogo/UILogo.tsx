@@ -37,7 +37,6 @@ const UILogo = ({ size = 'medium', bg = 'transparent', isAnimate = false }: prop
         bigTitle: bigTitle.current,
         smallTitle: smallTitle.current,
         wrapper: wrapper.current,
-        startFunc: () => setIsDisable(true),
         cb: () => setIsDisable(false)
       });
     }

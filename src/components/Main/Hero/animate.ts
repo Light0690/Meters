@@ -1,6 +1,5 @@
 import { gsap } from 'gsap';
 
-import { matchMediaCreator } from '@utils/matchMediaCreator';
 import { getDevice } from '@utils/getDevice';
 import useRem from '@utils/useRem';
 
@@ -30,4 +29,4 @@ const animate = ({ titles, list, buttons }: props) => {
   if(buttons) tl.from(buttons, getDataAnimate(device), '0');
 };
 
-export default (props: props) => matchMediaCreator(() => animate(props));
+export default animate;
