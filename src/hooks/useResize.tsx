@@ -1,28 +1,12 @@
 import { useState, useEffect } from "react";
-import {
-  SCREEN_SM,
-  SCREEN_MD,
-  SCREEN_LG,
-  SCREEN_XL,
-  SCREEN_XXL,
-} from "@constants/sizes";
-
-const getDevice = () => {
-  let device = 'desktop';
-  if (window.innerWidth < 1720) device = 'laptop';
-  if (window.innerWidth < 1024) device = 'tablet';
-  if (window.innerWidth < 768)  device = 'mobile';
-  return device;
-};
+import { SCREEN_SM, SCREEN_MD, SCREEN_LG, SCREEN_XL, SCREEN_XXL } from "@constants/sizes";
 
 export const useResize = () => {
   const [width, setWidth] = useState(window.innerWidth);
-  const [device, setDevice] = useState(getDevice());
 
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
-      setDevice(getDevice());
     };
 
     window.addEventListener("resize", handleResize);
@@ -34,7 +18,6 @@ export const useResize = () => {
 
   return {
     width,
-    device,
     isScreenSm: width >= SCREEN_SM,
     isScreenMd: width >= SCREEN_MD,
     isScreenLg: width >= SCREEN_LG,
