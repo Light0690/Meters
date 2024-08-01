@@ -1,7 +1,7 @@
-type device = 'desktop' | 'laptop' | 'tablet' | 'mobile';
+import { deviceType } from '@src/types/device';
 
-const getDevice = (): device  => {
-  let device: device = 'desktop';
+const getDevice = (): deviceType  => {
+  let device: deviceType = 'desktop';
   if (window.innerWidth >= 1720) device = 'desktop';
   if (window.innerWidth < 1720)  device = 'laptop';
   if (window.innerWidth < 1024)  device = 'tablet';
