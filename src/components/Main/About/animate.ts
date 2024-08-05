@@ -23,7 +23,7 @@ const dataAnimateX = {
 
 const animate = ({ parent, title, texts, presentation, icon, list }: props) => {
   const device = getDevice();
-  
+
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: parent,
