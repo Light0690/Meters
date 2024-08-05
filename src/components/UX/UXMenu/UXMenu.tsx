@@ -18,6 +18,17 @@ const UXMenu = ({ list }: props) => {
   const scrollLock = new ScrollLock();
 
   const changeActive = () => setIsActive(prev => !prev);
+  const onClickWindow = (e: React.SyntheticEvent<HTMLDivElement>) => {
+    const target = e.target;
+    
+    if(target instanceof HTMLDivElement) {
+      e.stopPropagation();
+
+      if(isActive && target?.dataset?.uxMenu == 'close') {
+        setIsActive(false);
+      }
+    }
+  };
 
   useEffect(() => {
     if(isScreenLg) setIsActive(false);
@@ -30,7 +41,7 @@ const UXMenu = ({ list }: props) => {
 
   return (
     <div className={styles.menu}>
-      <div className={cn(styles.menu__window, isActive ? styles['menu__window--active'] : '')}>
+      <div data-ux-menu='close' className={cn(styles.menu__window, isActive ? styles['menu__window--active'] : '')} onClick={(e) => onClickWindow(e)}>
         <ul className={cn(styles.menu__list, isActive ? styles['menu__list--active'] : '')}>
           {list.map((el, id) => {
             return (
