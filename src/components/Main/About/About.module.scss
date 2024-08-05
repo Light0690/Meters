@@ -177,7 +177,7 @@
     transition: box-shadow 0.5s;
 
     @include hover {
-      box-shadow: use-rem(1px 1px 30px 1px) rgba(49, 30, 1, 0.5);
+      box-shadow: use-rem(1px 1px 30px 10px) rgba(136, 88, 0, 0.5);
     }
 
     @include max-mobile {
