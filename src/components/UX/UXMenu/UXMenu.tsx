@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 
-import { useResize } from '@src/hooks/useResize';
-import { ScrollLock } from '@src/utils/scrollLock';
+import { useResize } from '@hooks/useResize';
+import { ScrollLock } from '@utils/scrollLock';
+
+import UILink from '@components/UI/UILink';
 
 import styles from './UXMenu.module.scss';
-import UILink from '@src/components/UI/UILink';
 
 interface props {
-    list: string[]
+  list: string[]
 }
 
 const UXMenu = ({ list }: props) => {
@@ -17,26 +18,30 @@ const UXMenu = ({ list }: props) => {
   const scrollLock = new ScrollLock();
 
   const changeActive = () => setIsActive(prev => !prev);
+  const onClickWindow = (e: React.SyntheticEvent<HTMLDivElement>) => {
+    const target = e.target;
+    
+    if(target instanceof HTMLDivElement) {
+      e.stopPropagation();
+
+      if(isActive && target?.dataset?.uxMenu == 'close') {
+        setIsActive(false);
+      }
+    }
+  };
 
   useEffect(() => {
-    if(isScreenLg) {
-      setIsActive(false);
-    }
+    if(isScreenLg) setIsActive(false);
   },[isScreenLg]);
 
   useEffect(() => {
-    if(isActive) {
-      scrollLock.disableScrolling();
-    } else {
-      scrollLock.enableScrolling();
-    }
+    if(isActive) scrollLock.disableScrolling();
+    else         scrollLock.enableScrolling();
   },[isActive]);
-
-  
 
   return (
     <div className={styles.menu}>
-      <div className={cn(styles.menu__window, isActive ? styles['menu__window--active'] : '')}>
+      <div data-ux-menu='close' className={cn(styles.menu__window, isActive ? styles['menu__window--active'] : '')} onClick={(e) => onClickWindow(e)}>
         <ul className={cn(styles.menu__list, isActive ? styles['menu__list--active'] : '')}>
           {list.map((el, id) => {
             return (

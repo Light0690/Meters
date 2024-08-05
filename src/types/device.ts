@@ -1,0 +1,1 @@
+export type deviceType = 'desktop' | 'laptop' | 'tablet' | 'mobile';
