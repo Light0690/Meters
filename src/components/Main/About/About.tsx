@@ -1,5 +1,7 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
+
+import Presentation from './Presentation';
 
 import aboutIcon from '@assets/Main/about.png';
 
@@ -7,12 +9,13 @@ import animate from './animate';
 import styles from './About.module.scss';
 
 const About = () => {
-  let parentRef =       useRef<null | HTMLDivElement>(null);
-  let titleRef  =       useRef<null | HTMLHeadingElement>(null);
-  let textsRef  =       useRef<null | HTMLDivElement>(null);
+  const [isPresentation, setIsPresentation] = useState(false);
+  let parentRef       = useRef<null | HTMLDivElement>(null);
+  let titleRef        = useRef<null | HTMLHeadingElement>(null);
+  let textsRef        = useRef<null | HTMLDivElement>(null);
   let presentationRef = useRef<null | HTMLDivElement>(null);
-  let iconRef   =       useRef<null | HTMLDivElement>(null);
-  let listRef   =       useRef<null | HTMLUListElement>(null);
+  let iconRef         = useRef<null | HTMLDivElement>(null);
+  let listRef         = useRef<null | HTMLUListElement>(null);
 
   const about = {
     title: 'МЕТРЫ В ЦИФРАХ',
@@ -47,6 +50,8 @@ const About = () => {
     ]
   };
 
+  const changePresentation = () => setIsPresentation(prev => !prev);
+
   useGSAP(() => {
     animate({
       parent: parentRef.current,
@@ -60,6 +65,7 @@ const About = () => {
   
   return (
     <div className={styles.about} ref={parentRef}>
+      <Presentation isPresentation={isPresentation} changePresentation={changePresentation}/>
       <div className={styles.about__content}>
         <div className={styles.about__container}>
           <h2 className={styles.about__title} ref={titleRef}>{about.title}</h2>
@@ -75,7 +81,7 @@ const About = () => {
               <img src={about.img.src} alt={about.img.alt} />
             </div>
           </div>
-          <button className={styles.about__button}>{about.button.text}</button>
+          <button className={styles.about__button} onClick={changePresentation}>{about.button.text}</button>
         </div>
       </div>
       <ul className={styles.about__list} ref={listRef}>
