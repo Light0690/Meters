@@ -9,6 +9,7 @@ import presentationImg from '@assets/Main/presentation.png';
 
 import animate from './animate';
 import styles from './Presentation.module.scss';
+import UIButton from '@src/components/UI/UIButton';
 
 interface props {
   isPresentation: boolean
@@ -74,7 +75,8 @@ const Presentation = ({ isPresentation, changePresentation }: props) => {
           <p className={styles.presentation__text}>{presentation.text}</p>
           <div className={styles.presentation__btns}>
             <input type="text" />
-            <button>{presentation.btnText}</button>
+            <UIButton text={presentation.btnText} type='filling'/>
+            {/* <button>{presentation.btnText}</button> */}
           </div>
         </div>
         <button className={styles.presentation__close} onClick={close}><IoCloseOutline /></button>

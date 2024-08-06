@@ -5,7 +5,7 @@
     padding: use-rem(40px 100px);
     min-width: use-rem(350px);
     color: $white;
-    transition: all 0.5s;
+    transition: all 0.5s ease;
 
     @include max-laptop {
       padding: use-rem(30px 90px); 
@@ -28,6 +28,19 @@
 
     @include hover {
       background: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .filling {
+    border-radius: use-rem(30px);
+    padding: use-rem(15px);
+    @include body-small;
+    background: $white;
+    color: $black;
+
+    @include hover {
+      background-color: transparent;
+      color: $white;
     }
   }
 }

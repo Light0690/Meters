@@ -4,7 +4,7 @@ import styles from './UIButton.module.scss';
 
 interface props {
   text: string;
-  type?: 'transparent';
+  type?: 'transparent' | 'filling';
 }
 
 const UIButton = ({ text, type = 'transparent'}: props) => {
