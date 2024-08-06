@@ -1,9 +1,10 @@
 import { ChangeEventHandler, FocusEventHandler } from "react";
+
 import cn from "classnames";
 
 import styles from "./UiFormInput.module.scss";
 
-interface Props {
+interface Props extends  React.InputHTMLAttributes<HTMLInputElement>{
   name: string;
   type: string;
   title: string;
@@ -23,6 +24,7 @@ const UiFormInput = ({
   value,
   errors,
   touched,
+  ...props
 }: Props) => {
   return (
     <div className={styles.container}>
@@ -43,6 +45,7 @@ const UiFormInput = ({
         value={value}
         onChange={onChange}
         onBlur={onBlur}
+        {...props}
       />
       {touched && errors && (
         <div className={styles.container__error}>{errors}</div>
