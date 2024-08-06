@@ -1,7 +1,10 @@
 import { useGSAP } from '@gsap/react';
 import { useEffect, useRef } from 'react';
-import { IoCloseOutline } from "react-icons/io5";
 import cn from 'classnames';
+
+import Form from '../Form';
+
+import { IoCloseOutline } from "react-icons/io5";
 
 import { ScrollLock } from '@utils/scrollLock';
 
@@ -9,7 +12,6 @@ import presentationImg from '@assets/Main/presentation.png';
 
 import animate from './animate';
 import styles from './Presentation.module.scss';
-import UIButton from '@src/components/UI/UIButton';
 
 interface props {
   isPresentation: boolean
@@ -73,10 +75,7 @@ const Presentation = ({ isPresentation, changePresentation }: props) => {
         <div className={styles.presentation__content} ref={content}>
           <h4 className={styles.presentation__title}>{presentation.title}</h4>
           <p className={styles.presentation__text}>{presentation.text}</p>
-          <div className={styles.presentation__btns}>
-            <input type="text" />
-            <UIButton text={presentation.btnText} typeAnim='filling' type='submit'/>
-          </div>
+          <Form btnText={presentation.btnText}/>
         </div>
         <button className={styles.presentation__close} onClick={close}><IoCloseOutline /></button>
         <img className={styles.presentation__img} src={presentation.img.src} alt={presentation.img.alt} ref={img}/>

@@ -64,11 +64,7 @@
     @include body-small;
   } 
 
-  &__btns {
-    display: flex;
-    flex-direction: row;
-    gap: use-rem(20px);
-  } 
+  
 
   &__close {
     border: none;
