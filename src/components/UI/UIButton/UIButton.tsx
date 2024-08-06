@@ -2,15 +2,19 @@ import cn from 'classnames';
 
 import styles from './UIButton.module.scss';
 
-interface props {
+interface props extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   text: string;
-  type?: 'transparent';
+  typeAnim?: 'transparent' | 'filling' | 'shadow';
+  size?: 'big' | 'medium';
+  radius?: boolean
 }
 
-const UIButton = ({ text, type = 'transparent'}: props) => {
+const UIButton = ({ text, typeAnim = 'transparent', size = 'medium', radius = true, ...props }: props) => {
   return (
     <div className={styles.wrapper}>
-      <button className={cn(styles.wrapper__button, styles[type])}>{text}</button>
+      <button className={cn(styles.wrapper__button, styles[typeAnim], styles[size], radius && styles['radius'])} {...props}>
+        {text}
+      </button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 .presentation {
-  width: 0;
-  height: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,12 +9,13 @@
   left: 0;
   z-index: 100;
   opacity: 0;
+  visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
+  transition: all 0.8s ease;
 
   &--active {
-    width: 100vw;
-    height: 100vh;
+    visibility: visible;
     opacity: 1;
   }
 
@@ -63,11 +64,7 @@
     @include body-small;
   } 
 
-  &__btns {
-    display: flex;
-    flex-direction: row;
-    gap: use-rem(20px);
-  } 
+  
 
   &__close {
     border: none;

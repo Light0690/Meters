@@ -1,6 +1,6 @@
 $black: #000000;
 $black-hover: #3d3d3d;
-$white: #ffffff;
+$white: #F0EFEE;
 $white-hover: #ecebeb;
 
 // Основные цвета
@@ -18,9 +18,8 @@ $black50: #656565;
 $black25: #b6b6b6;
 $black10: #b6b6b6;
 $text-secondary: #484848;
-$gradient-bg: linear-gradient(90deg, rgba(255,151,5,1) 0%, rgba(255,128,0,1) 50%, rgba(255,98,0,1) 100%);
-$gradient-bg-second: linear-gradient(90deg, rgb(248, 167, 53) 0%, rgb(252, 140, 28) 50%, rgb(248, 109, 22) 100%);
-
+$gradient-bg: linear-gradient(270deg, rgb(53, 110, 35) 0%, rgba(22,33,20,1) 100%);
+$gradient-bg-second: linear-gradient(270deg, rgba(41,65,34,1) 0%, rgba(22,33,20,1) 100%);
 $bg-dark: #262626;
 
 // Базовая типографика
