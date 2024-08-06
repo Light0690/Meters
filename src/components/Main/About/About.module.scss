@@ -168,23 +168,6 @@
     }
   }
 
-  &__button {
-    border-radius: use-rem(30px);
-    border: none;
-    padding: use-rem(15px);
-    @include body-small;
-    color: $black;
-    transition: box-shadow 0.5s;
-
-    @include hover {
-      box-shadow: use-rem(1px 1px 30px 1px) rgb(7, 61, 0);
-    }
-
-    @include max-mobile {
-      padding: use-rem(10px);
-    }
-  }
-
   &__list {
     display: flex;
     flex-direction: column;

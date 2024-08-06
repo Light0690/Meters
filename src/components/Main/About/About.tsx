@@ -7,6 +7,7 @@ import aboutIcon from '@assets/Main/about.png';
 
 import animate from './animate';
 import styles from './About.module.scss';
+import UIButton from '@src/components/UI/UIButton';
 
 const About = () => {
   const [isPresentation, setIsPresentation] = useState(false);
@@ -81,7 +82,7 @@ const About = () => {
               <img src={about.img.src} alt={about.img.alt} />
             </div>
           </div>
-          <button className={styles.about__button} onClick={changePresentation}>{about.button.text}</button>
+          <UIButton text={about.button.text} typeAnim='shadow' onClick={changePresentation}/>
         </div>
       </div>
       <ul className={styles.about__list} ref={listRef}>

@@ -75,8 +75,7 @@ const Presentation = ({ isPresentation, changePresentation }: props) => {
           <p className={styles.presentation__text}>{presentation.text}</p>
           <div className={styles.presentation__btns}>
             <input type="text" />
-            <UIButton text={presentation.btnText} type='filling'/>
-            {/* <button>{presentation.btnText}</button> */}
+            <UIButton text={presentation.btnText} typeAnim='filling'/>
           </div>
         </div>
         <button className={styles.presentation__close} onClick={close}><IoCloseOutline /></button>

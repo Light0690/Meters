@@ -38,8 +38,8 @@ const Hero = () => {
         </ul>
       </div>
       <div ref={buttons} className={styles.hero__btns}>
-        <UIButton text='Москва'/>
-        <UIButton text='СПБ'/>
+        <UIButton text='Москва' size='big' radius={false}/>
+        <UIButton text='СПБ' size='big' radius={false}/>
       </div>
     </div>
   );
