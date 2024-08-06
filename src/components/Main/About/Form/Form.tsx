@@ -1,6 +1,5 @@
 import * as Yup from "yup";
 import { useFormik } from 'formik';
-import { maskJs } from "mask-js";
 
 import UIButton from '@ui/UIButton';
 import UiFormInput from '@ui/UiFormInput';
@@ -25,19 +24,20 @@ const Form = ({ btnText }: props) => {
       console.log(number)
     },
   });
+  const mask = ['+', '7', ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/];
 
   return (
     <form className={styles.form} onSubmit={formik.handleSubmit}>
       <UiFormInput
         name='number'
         type='phone'
-        title=''
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        value={maskJs('+{7} (999) 999-99-99', formik.values.number)}
+        value={formik.values.number}
         errors={formik.errors.number}
         touched={formik.touched.number}
         placeholder='+7 (999) 999-99-99'
+        mask={mask}
       />
       <UIButton text={btnText} typeAnim='filling' type='submit'/>
     </form>

@@ -1,5 +1,5 @@
 import { ChangeEventHandler, FocusEventHandler } from "react";
-
+import MaskedInput, { Mask } from 'react-text-mask';
 import cn from "classnames";
 
 import styles from "./UiFormInput.module.scss";
@@ -7,23 +7,25 @@ import styles from "./UiFormInput.module.scss";
 interface Props extends  React.InputHTMLAttributes<HTMLInputElement>{
   name: string;
   type: string;
-  title: string;
+  title?: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
   onBlur: FocusEventHandler<HTMLInputElement>;
   value: string | number;
   errors: string | undefined;
   touched: boolean | undefined;
+  mask: Mask | ((value: string) => Mask);
 }
 
 const UiFormInput = ({
   name,
   type,
-  title,
+  title = '',
   onChange,
   onBlur,
   value,
   errors,
   touched,
+  mask,
   ...props
 }: Props) => {
   return (
@@ -37,7 +39,7 @@ const UiFormInput = ({
       >
         {title}
       </label>
-      <input
+      <MaskedInput
         name={name}
         id={name}
         type={type}
@@ -45,6 +47,7 @@ const UiFormInput = ({
         value={value}
         onChange={onChange}
         onBlur={onBlur}
+        mask={mask}
         {...props}
       />
       {touched && errors && (
