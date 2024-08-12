@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
-import UILogo from '@src/components/UI/UILogo';
+import UILogo from '@ui/UILogo';
+import UILink from '@ui/UILink';
 
 import locationIcon from '@assets/common/locationIcon.svg';
 
@@ -10,7 +11,7 @@ import ytIcon from '@assets/common/ytIcon.svg';
 import yzIcon from '@assets/common/yzIcon.svg';
 
 import styles from './Bottom.module.scss';
-import UILink from '@src/components/UI/UILink';
+
 
 const Bottom = () => {
   const cities = [

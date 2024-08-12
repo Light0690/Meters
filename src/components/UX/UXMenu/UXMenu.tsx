@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { useResize } from '@hooks/useResize';
 import { ScrollLock } from '@utils/scrollLock';
 
-import UILink from '@components/UI/UILink';
+import UILink from '@ui/UILink';
 
 import styles from './UXMenu.module.scss';
 

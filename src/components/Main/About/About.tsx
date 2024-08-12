@@ -2,12 +2,13 @@ import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 
 import Presentation from './Presentation';
+import UIButton from '@ui/UIButton';
 
 import aboutIcon from '@assets/Main/about.png';
 
 import animate from './animate';
 import styles from './About.module.scss';
-import UIButton from '@src/components/UI/UIButton';
+
 
 const About = () => {
   const [isPresentation, setIsPresentation] = useState(false);
